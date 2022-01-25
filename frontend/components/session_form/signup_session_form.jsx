@@ -12,7 +12,6 @@ class SignupSessionForm extends React.Component {
       zipCode: '',
       // errors: []
     }
-    console.log(this.props);
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -30,7 +29,6 @@ class SignupSessionForm extends React.Component {
   }
 
   renderErrors() {
-    console.log(this.props.errors)
     return (
       <div>
         <ul>
@@ -48,7 +46,6 @@ class SignupSessionForm extends React.Component {
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit}>
-          {this.renderErrors()}
           <div className="form-header">
             <h2 className="form-header-primary">Welcome back!</h2>
             <h3 className="form-header-secondary">Let's get you outside.</h3>
@@ -56,6 +53,7 @@ class SignupSessionForm extends React.Component {
           </div>
           {/* <button className="sign-in-demo">Demo Sign in</button> */}
           {/* <hr/> */}
+          {this.renderErrors()}
           <div className="login-form">
             <input
               className="login-input"
