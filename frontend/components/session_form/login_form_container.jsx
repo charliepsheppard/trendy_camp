@@ -2,13 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { login } from '../../actions/session_actions';
-import SessionForm from './session_form';
+import LoginSessionForm from './login_session_form';
 
 const mapStateToProps = ({ errors }) => {
   return {
     errors: errors.session,
     formType: 'Log in',
-    navLink: <Link to="/signup">Sign up</Link>
+    navLink: <Link to="/signup">Log in</Link>
   };
 };
 
@@ -18,4 +18,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);
+export default connect(mapStateToProps, mapDispatchToProps)(LoginSessionForm);

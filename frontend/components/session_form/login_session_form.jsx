@@ -1,15 +1,12 @@
 import React from 'react';
 
 
-class SessionForm extends React.Component {
+class LoginSessionForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state ={
+    this.state = {
       email: '',
-      password: '',
-      firstName: '',
-      lastName: '',
-      zipCode: ''
+      password: ''
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -39,38 +36,6 @@ class SessionForm extends React.Component {
     );
   }
 
-  renderOtherFields() {
-    if (this.props.formType === 'Sign up') {
-      return (
-        <div>
-          <input
-            className="login-input"
-            type="text"
-            placeholder="First name"
-            value={this.state.firstName}
-            onChange={this.handleChange('firstName')}
-          />
-          <input
-            className="login-input"
-            type="text"
-            placeholder="Last name"
-            value={this.state.lastName}
-            onChange={this.handleChange('lastName')}
-          />
-          <input
-            className="login-input"
-            type="text"
-            placeholder="Zip code"
-            value={this.state.zipCode}
-            onChange={this.handleChange('zipCode')}
-          />
-        </div>
-      )
-    } else {
-      return <div></div>
-    }
-  }
-
   render() {
     return (
       <div className="login-form-container">
@@ -82,24 +47,23 @@ class SessionForm extends React.Component {
           </div>
           {this.renderErrors()}
           <button className="sign-in-demo">Demo Sign in</button>
-          <hr/>
+          <hr />
           <div className="login-form">
-            <input 
+            <input
               className="login-input"
               type="text"
               placeholder='Email address...'
               value={this.state.email}
               onChange={this.handleChange('email')}
             />
-            <input 
+            <input
               className="login-input"
               type="password"
               placeholder='Password...'
               value={this.state.password}
               onChange={this.handleChange('password')}
             />
-            {this.renderOtherFields()}
-            <input className="session-submit" type="submit" value={this.props.formType}/>
+            <input className="session-submit" type="submit" value={this.props.formType} />
             <span className="action-prompt">Don't have a hipcamp account? {this.props.navLink}</span>
           </div>
         </form>
@@ -109,4 +73,4 @@ class SessionForm extends React.Component {
   };
 };
 
-export default SessionForm;
+export default LoginSessionForm;
