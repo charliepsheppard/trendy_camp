@@ -73,9 +73,8 @@ $primary-text: #333333;
   margin-top: 40px;
 }
 
-.sign-in-demo {
+.demo-submit {
   height: 3.4rem;
-  margin-top: 3rem;
   margin-bottom: 1.5rem;
   background: $button;
   border: none;
@@ -85,11 +84,11 @@ $primary-text: #333333;
   width: 100%;
 }
 
-.sign-in-demo:hover {
+.demo-submit:hover {
   box-shadow: 1px 1px 5px #777777;
   cursor: pointer;
 }
 
-.sign-in-demo:active {
+.demo-submit:active {
   box-shadow: 1px 1px 5px #777777 inset;
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-class SessionForm extends React.Component {
+class SignupSessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state ={
@@ -9,7 +9,8 @@ class SessionForm extends React.Component {
       password: '',
       firstName: '',
       lastName: '',
-      zipCode: ''
+      zipCode: '',
+      // errors: []
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,46 +30,16 @@ class SessionForm extends React.Component {
 
   renderErrors() {
     return (
-      <ul>
-        {this.props.errors.map((error, idx) => (
-          <li key={idx}>
-            {error}
-          </li>
-        ))}
-      </ul>
+      <div>
+        <ul>
+          {this.props.errors.map((error, idx) => (
+            <li key={idx}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      </div>
     );
-  }
-
-  renderOtherFields() {
-    if (this.props.formType === 'Sign up') {
-      return (
-        <div>
-          <input
-            className="login-input"
-            type="text"
-            placeholder="First name"
-            value={this.state.firstName}
-            onChange={this.handleChange('firstName')}
-          />
-          <input
-            className="login-input"
-            type="text"
-            placeholder="Last name"
-            value={this.state.lastName}
-            onChange={this.handleChange('lastName')}
-          />
-          <input
-            className="login-input"
-            type="text"
-            placeholder="Zip code"
-            value={this.state.zipCode}
-            onChange={this.handleChange('zipCode')}
-          />
-        </div>
-      )
-    } else {
-      return <div></div>
-    }
   }
 
   render() {
@@ -76,29 +47,50 @@ class SessionForm extends React.Component {
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit}>
           <div className="form-header">
-            <h2 className="form-header-primary">Welcome back!</h2>
-            <h3 className="form-header-secondary">Let's get you outside.</h3>
+            <h2 className="form-header-primary">Join TrendyCamp</h2>
+            <h3 className="form-header-secondary">Discover the best camping near me</h3>
             <br />
           </div>
+          {/* <button className="sign-in-demo">Demo Sign in</button> */}
+          {/* <hr/> */}
           {this.renderErrors()}
-          <button className="sign-in-demo">Demo Sign in</button>
-          <hr/>
           <div className="login-form">
+            <input
+              className="login-input"
+              type="text"
+              placeholder="First name"
+              value={this.state.firstName}
+              onChange={this.handleChange('firstName')}
+            />
+            <input
+              className="login-input"
+              type="text"
+              placeholder="Last name"
+              value={this.state.lastName}
+              onChange={this.handleChange('lastName')}
+            />
             <input 
               className="login-input"
               type="text"
-              placeholder='Email address...'
+              placeholder='Email address'
               value={this.state.email}
               onChange={this.handleChange('email')}
             />
             <input 
               className="login-input"
               type="password"
-              placeholder='Password...'
+              placeholder='Enter a password'
               value={this.state.password}
               onChange={this.handleChange('password')}
             />
-            {this.renderOtherFields()}
+            <input
+              className="login-input"
+              type="text"
+              placeholder="Zip code"
+              value={this.state.zipCode}
+              onChange={this.handleChange('zipCode')}
+            />
+            {/* {this.renderOtherFields()} */}
             <input className="session-submit" type="submit" value={this.props.formType}/>
             <span className="action-prompt">Don't have a hipcamp account? {this.props.navLink}</span>
           </div>
@@ -109,4 +101,4 @@ class SessionForm extends React.Component {
   };
 };
 
-export default SessionForm;
+export default SignupSessionForm;
