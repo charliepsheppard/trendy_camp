@@ -10,7 +10,7 @@ const App = () => {
   return (
     <div>
       <header>
-        <h1>Welcome to TrendyCamp</h1>
+        <h1 className="nav-logo">TrendyCamp</h1>
         <GreetingContainer />
       </header>
       <Switch>
