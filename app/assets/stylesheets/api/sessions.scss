@@ -32,13 +32,21 @@ $primary-text: #333333;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin-top: 2rem;
+}
+
+::placeholder {
+  color: $primary-text;
 }
 
 .login-input {
   height: 3.4rem;
   width: 20rem;
   margin: .3rem;
-  color: $primary-text;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: .4rem;
+  padding-left: .7rem;
 }
 
 .session-submit {
@@ -49,4 +57,39 @@ $primary-text: #333333;
   border-radius: 5px;
   font-size: 1rem;
   color: rgb(255, 255, 255)
+}
+
+.session-submit:hover {
+  box-shadow: 1px 1px 5px #777777;
+  cursor: pointer;
+}
+
+.session-submit:active {
+  box-shadow: 1px 1px 5px #777777 inset;
+}
+
+.action-prompt {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.sign-in-demo {
+  height: 3.4rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  background: $button;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: rgb(255, 255, 255);
+  width: 100%;
+}
+
+.sign-in-demo:hover {
+  box-shadow: 1px 1px 5px #777777;
+  cursor: pointer;
+}
+
+.sign-in-demo:active {
+  box-shadow: 1px 1px 5px #777777 inset;
 }
