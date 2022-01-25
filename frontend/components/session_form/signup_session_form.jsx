@@ -47,8 +47,8 @@ class SignupSessionForm extends React.Component {
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit}>
           <div className="form-header">
-            <h2 className="form-header-primary">Welcome back!</h2>
-            <h3 className="form-header-secondary">Let's get you outside.</h3>
+            <h2 className="form-header-primary">Join TrendyCamp</h2>
+            <h3 className="form-header-secondary">Discover the best camping near me</h3>
             <br />
           </div>
           {/* <button className="sign-in-demo">Demo Sign in</button> */}
@@ -72,14 +72,14 @@ class SignupSessionForm extends React.Component {
             <input 
               className="login-input"
               type="text"
-              placeholder='Email address...'
+              placeholder='Email address'
               value={this.state.email}
               onChange={this.handleChange('email')}
             />
             <input 
               className="login-input"
               type="password"
-              placeholder='Password...'
+              placeholder='Enter a password'
               value={this.state.password}
               onChange={this.handleChange('password')}
             />

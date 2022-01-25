@@ -10,6 +10,7 @@ class LoginSessionForm extends React.Component {
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoLogin = this.handleDemoLogin.bind(this);
   }
 
   handleChange(type) {
@@ -22,6 +23,12 @@ class LoginSessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
+  }
+
+  handleDemoLogin(e) {
+    e.preventDefault();
+    const demoUser = { firstName: 'Demo', lastName: 'User', email: 'demo@demo.com', zipCode: '05452', password: '123456' };
+    this.props.processForm(demoUser);
   }
 
   renderErrors() {
@@ -46,8 +53,6 @@ class LoginSessionForm extends React.Component {
             <br />
           </div>
           {this.renderErrors()}
-          <button className="sign-in-demo">Demo Sign in</button>
-          <hr />
           <div className="login-form">
             <input
               className="login-input"
@@ -63,7 +68,9 @@ class LoginSessionForm extends React.Component {
               value={this.state.password}
               onChange={this.handleChange('password')}
             />
-            <input className="session-submit" type="submit" value={this.props.formType} />
+            <button className="session-submit" type="submit">Log in</button>
+            <br/>
+            <button className="demo-submit" onClick={this.handleDemoLogin}>Demo log in</button>
             <span className="action-prompt">Don't have a hipcamp account? {this.props.navLink}</span>
           </div>
         </form>
