@@ -8,6 +8,7 @@ $primary-text: #333333;
 .login-form-container {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .form-header {
@@ -47,6 +48,24 @@ $primary-text: #333333;
   font-weight: 600;
   padding: .4rem;
   padding-left: .7rem;
+}
+
+.signup-input {
+  height: 3.4rem;
+  // width: 20rem;
+  margin: .3rem;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: .4rem;
+  padding-left: .7rem;
+}
+
+.name-input-container {
+  display: flex;
+}
+
+.name-input {
+  width: 43%;
 }
 
 .session-submit {
@@ -91,4 +110,19 @@ $primary-text: #333333;
 
 .demo-submit:active {
   box-shadow: 1px 1px 5px #777777 inset;
+}
+
+.error-display-container {
+  display: flex;
+  flex-direction: column;
+  width: 170%;
+  margin-left: -8rem;
+  text-align: center;
+}
+
+.error-display-item {
+  background-color: rgba(202, 62, 43, .3);
+  list-style-type: none;
+  padding: 1.5rem;
+  margin-top: .5rem;
 }
