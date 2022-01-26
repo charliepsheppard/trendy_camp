@@ -10,10 +10,13 @@ class SignupSessionForm extends React.Component {
       firstName: '',
       lastName: '',
       zipCode: '',
-      // errors: []
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentWillUnmount() {
+    this.props.clearErrors(this.props.errors);
   }
 
   handleChange(type) {
@@ -101,7 +104,6 @@ class SignupSessionForm extends React.Component {
         </form>
       </div>
     )
-    // return this.props.formType === 'login' ? this.renderLogin() : this.renderSignup();
   };
 };
 

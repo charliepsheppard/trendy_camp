@@ -13,6 +13,10 @@ class LoginSessionForm extends React.Component {
     this.handleDemoLogin = this.handleDemoLogin.bind(this);
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors(this.props.errors);
+  }
+
   handleChange(type) {
     return e => {
       this.setState({ [type]: e.currentTarget.value });

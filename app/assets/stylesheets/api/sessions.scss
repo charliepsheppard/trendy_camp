@@ -5,6 +5,36 @@
 $button: #41d9ac;
 $primary-text: #333333;
 
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  // text-align: left;
+  display: inline;
+  font-family: Arial, Helvetica, sans-serif;
+  color: $primary-text;
+}
+
+.session-link-nav {
+  // text-align: right;
+  display: inline;
+  margin-top: 1.8rem;
+}
+
+.session-link {
+  text-decoration: none;
+  color: $primary-text;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: .5rem;
+  padding: 1px;
+}
+
+.session-link:hover {
+  border-bottom: 2px solid $button;
+}
+
 .login-form-container {
   display: flex;
   justify-content: center;
