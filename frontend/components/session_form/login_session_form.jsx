@@ -13,6 +13,10 @@ class LoginSessionForm extends React.Component {
     this.handleDemoLogin = this.handleDemoLogin.bind(this);
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors(this.props.errors);
+  }
+
   handleChange(type) {
     return e => {
       this.setState({ [type]: e.currentTarget.value });
@@ -35,7 +39,7 @@ class LoginSessionForm extends React.Component {
     return (
       <ul>
         {this.props.errors.map((error, idx) => (
-          <li key={idx}>
+          <li key={idx} className="error-display-item">
             {error}
           </li>
         ))}
@@ -52,8 +56,10 @@ class LoginSessionForm extends React.Component {
             <h3 className="form-header-secondary">Let's get you outside.</h3>
             <br />
           </div>
-          {this.renderErrors()}
           <div className="login-form">
+            <div className="error-display-container">
+              {this.renderErrors()}
+            </div>
             <input
               className="login-input"
               type="text"

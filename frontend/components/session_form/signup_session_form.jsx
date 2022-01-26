@@ -10,10 +10,13 @@ class SignupSessionForm extends React.Component {
       firstName: '',
       lastName: '',
       zipCode: '',
-      // errors: []
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentWillUnmount() {
+    this.props.clearErrors(this.props.errors);
   }
 
   handleChange(type) {
@@ -33,7 +36,7 @@ class SignupSessionForm extends React.Component {
       <div>
         <ul>
           {this.props.errors.map((error, idx) => (
-            <li key={idx}>
+            <li key={idx} className="error-display-item">
               {error}
             </li>
           ))}
@@ -53,38 +56,42 @@ class SignupSessionForm extends React.Component {
           </div>
           {/* <button className="sign-in-demo">Demo Sign in</button> */}
           {/* <hr/> */}
-          {this.renderErrors()}
           <div className="login-form">
-            <input
-              className="login-input"
-              type="text"
-              placeholder="First name"
-              value={this.state.firstName}
-              onChange={this.handleChange('firstName')}
-            />
-            <input
-              className="login-input"
-              type="text"
-              placeholder="Last name"
-              value={this.state.lastName}
-              onChange={this.handleChange('lastName')}
-            />
+            <div className="error-display-container">
+              {this.renderErrors()}
+            </div>
+            <div className="name-input-container">
+              <input
+                className="signup-input name-input"
+                type="text"
+                placeholder="First name"
+                value={this.state.firstName}
+                onChange={this.handleChange('firstName')}
+              />
+              <input
+                className="signup-input name-input"
+                type="text"
+                placeholder="Last name"
+                value={this.state.lastName}
+                onChange={this.handleChange('lastName')}
+              />
+            </div>
             <input 
-              className="login-input"
+              className="signup-input"
               type="text"
               placeholder='Email address'
               value={this.state.email}
               onChange={this.handleChange('email')}
             />
             <input 
-              className="login-input"
+              className="signup-input"
               type="password"
               placeholder='Enter a password'
               value={this.state.password}
               onChange={this.handleChange('password')}
             />
             <input
-              className="login-input"
+              className="signup-input"
               type="text"
               placeholder="Zip code"
               value={this.state.zipCode}
@@ -92,12 +99,11 @@ class SignupSessionForm extends React.Component {
             />
             {/* {this.renderOtherFields()} */}
             <input className="session-submit" type="submit" value={this.props.formType}/>
-            <span className="action-prompt">Don't have a hipcamp account? {this.props.navLink}</span>
+            <span className="action-prompt">Already have a TrendyCamp account? {this.props.navLink}</span>
           </div>
         </form>
       </div>
     )
-    // return this.props.formType === 'login' ? this.renderLogin() : this.renderSignup();
   };
 };
 

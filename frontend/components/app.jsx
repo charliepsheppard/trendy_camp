@@ -9,7 +9,7 @@ import { AuthRoute } from '../util/route_util';
 const App = () => {
   return (
     <div>
-      <header>
+      <header className="nav-header">
         <h1 className="nav-logo">TrendyCamp</h1>
         <GreetingContainer />
       </header>
