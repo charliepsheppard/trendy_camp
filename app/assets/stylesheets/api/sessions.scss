@@ -120,6 +120,20 @@ $primary-text: #333333;
 .action-prompt {
   text-align: center;
   margin-top: 40px;
+  color: $primary-text;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.action-prompt-link {
+  text-decoration: none;
+  border-bottom: 1px solid #c9c7c7;
+  color: $primary-text;
+  font-weight: 600;
+  padding-bottom: 2px;
+}
+
+.action-prompt-link:hover {
+  border-bottom: 1px solid $primary-text;
 }
 
 .demo-submit {
@@ -140,6 +154,18 @@ $primary-text: #333333;
 
 .demo-submit:active {
   box-shadow: 1px 1px 5px #777777 inset;
+}
+
+.session-link-nav-logout {
+  color: $primary-text;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-right: .5rem;
+  padding-bottom: 2px;
+}
+
+.session-link-nav-logout:hover {
+  border-bottom: 2px solid $button;
+  cursor: pointer;
 }
 
 .error-display-container {

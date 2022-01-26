@@ -99,7 +99,7 @@ class SignupSessionForm extends React.Component {
             />
             {/* {this.renderOtherFields()} */}
             <input className="session-submit" type="submit" value={this.props.formType}/>
-            <span className="action-prompt">Don't have a hipcamp account? {this.props.navLink}</span>
+            <span className="action-prompt">Already have a TrendyCamp account? {this.props.navLink}</span>
           </div>
         </form>
       </div>
