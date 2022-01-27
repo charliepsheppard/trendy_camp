@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
+
 User.delete_all
 Spot.delete_all
 
@@ -17,6 +19,7 @@ spot1 = Spot.create({
   category: 'Tent',
   price: 55
 })
+spot1.photo.attach(io: open('https://trendy-camp-seeds.s3.us-west-2.amazonaws.com/fern-gully.jpg'), filename: 'fern-gully.jpg') 
 
 spot2 = Spot.create({
   name: 'Blueberry Hill Oasis and Old Growth',
@@ -25,6 +28,7 @@ spot2 = Spot.create({
   category: 'Vacation rental',
   price: 200
 })
+spot2.photo.attach(io: open('https://trendy-camp-seeds.s3.us-west-2.amazonaws.com/blueberry-hill.jpg'), filename: 'blueberry-hill.jpg')
 
 spot3 = Spot.create({
   name: 'North Fork Campground',
@@ -33,14 +37,16 @@ spot3 = Spot.create({
   category: 'Tent',
   price: 30
 })
+spot3.photo.attach(io: open('https://trendy-camp-seeds.s3.us-west-2.amazonaws.com/north-fork.jpg'), filename: 'north-fork.jpg')
 
 spot4 = Spot.create({
-  name: 'Hoh Campground',
+  name: 'Hoh Cabin',
   description: 'Expect a fantastical, unique, and otherworldly experience getting to sleep in America’s most popular rainforest at Hoh Campground. Get a site year-round along the Hoh River, put your feet up, and listen to the magical music all around you. Rain or no rain make sure to do the Hall of Mosses trail. It may be cold and it may be wet, but remember adventurers it is an experience you will never forget!'
-  amenities: 'Potable water available, Picnic table available',
-  category: 'RV',
+  amenities: 'Potable water available, Kitchen available, Shower available, Picnic table available',
+  category: 'Cabin',
   price: 35
 })
+spot4.photo.attach(io: open('https://trendy-camp-seeds.s3.us-west-2.amazonaws.com/hoh-cabin.jpg'), filename: 'hoh-cabin.jpg')
 
 spot5 = Spot.create({
   name: 'S K Y C A M P',
@@ -49,6 +55,7 @@ spot5 = Spot.create({
   category: 'Tent' ,
   price: 65
 })
+spot5.photo.attach(io: open('https://trendy-camp-seeds.s3.us-west-2.amazonaws.com/skycamp.jpg'), filename: 'skycamp.jpg')
 
 spot6 = Spot.create({
   name: 'The Magic Hour Home',
@@ -57,6 +64,7 @@ spot6 = Spot.create({
   category: 'Vacation rental',
   price: 600
 })
+spot6.photo.attach(io: open('https://trendy-camp-seeds.s3.us-west-2.amazonaws.com/magic-hour.jpg'), filename: 'magic-hour.jpg')
 
 spot7 = Spot.create({
   name: 'The Saharan',
@@ -65,6 +73,7 @@ spot7 = Spot.create({
   category: 'Canvas tent',
   price: 99
 })
+spot7.photo.attach(io: open('https://trendy-camp-seeds.s3.us-west-2.amazonaws.com/saharan.jpg'), filename: 'saharan.jpg')
 
 spot8 = Spot.create({
   name: 'The Watering Hole',
@@ -73,6 +82,7 @@ spot8 = Spot.create({
   category: 'Tent',
   price: 48
 })
+spot8.photo.attach(io: open('https://trendy-camp-seeds.s3.us-west-2.amazonaws.com/watering-hole.jpg'), filename: 'watering-hole.jpg')
 
 spot9 = Spot.create({
   name: 'The Castle House | Yurt 1 with Pool',
@@ -81,14 +91,16 @@ spot9 = Spot.create({
   category: 'Yurt',
   price: 222
 })
+spot9.photo.attach(io: open('https://trendy-camp-seeds.s3.us-west-2.amazonaws.com/castle-house.jpg'), filename: 'castle-house.jpg')
 
 spot10 = Spot.create({
   name: 'Yellowstone Dreamin Camp',
   description: 'We are a Glamping Camp built to let people experience the great Big Sky Country of Montana staying in Paradise Valley. We are located less than 30 miles from Yellowstone National Park and surrounded by all kinds of activities and adventure.',
   amenities: 'Potable water available, Kitchen available, Showers available, Wifi available, Bins available, Laundry present',
-  category: 'Canvas tent',
+  category: 'Tent',
   price: 263
 })
+spot10.photo.attach(io: open('https://trendy-camp-seeds.s3.us-west-2.amazonaws.com/yellowstone-dreamin.jpg'), filename: 'yellowstone-dreamin.jpg')
 
 spot11 = Spot.create({
   name: "Sportsman's Retreat RV Sites",
@@ -97,22 +109,25 @@ spot11 = Spot.create({
   category: 'RV',
   price: 85
 })
+spot11.photo.attach(io: open('https://trendy-camp-seeds.s3.us-west-2.amazonaws.com/sportsman-retreat.jpg'), filename: 'sportsman-retreat.jpg')
 
 spot12 = Spot.create({
-  name: 'RV Camping on Arcadia Reservoir',
+  name: 'Cabin on Arcadia Reservoir',
   description: 'Access to private lake: swimming and fishing and boating (no gas engines allowed). Private sand dune area for ATVs, with access to hundreds of miles of public land trails. St Anthony Sand Dunes, Civil Defense Caves, Ice Caves and Island Park Reservoir are all accessible on an ATV day trip.  Yellowstone National Park is an 80 minute drive, though coming and leaving the property requires 20-30 minutes on a dirt road.',
   amenities: 'Potable water available, Kitchen available, Showers available, Picnic table available, Bins available',
-  category: 'RV',
-  price: 89
+  category: 'Cabin',
+  price: 160
 })
+spot12.photo.attach(io: open('https://trendy-camp-seeds.s3.us-west-2.amazonaws.com/arcadia-cabin.jpg'), filename: 'arcadia-cabin.jpg')
 
 spot13 = Spot.create({
-  name: 'Desert Moon Tent Camping',
+  name: 'Desert Moon RV Camping',
   description: 'Setup your tent and bask in the shade of the multiple fruit trees around the campgrounds. Enjoy some respite before exploring the beautiful canyons and desert landscapes that surround the Desert Moon and beyond. We have 2 showers and potable water on site.',
   amenities: 'Potable water available, Showers available, Wifi available, Bins available',
-  category: 'Tent',
+  category: 'RV',
   price: 25
 })
+spot13.photo.attach(io: open('https://trendy-camp-seeds.s3.us-west-2.amazonaws.com/desert-moon.jpg'), filename: 'desert-moon.jpg')
 
 spot14 = Spot.create({
   name: 'Sky Dancers Den',
@@ -121,6 +136,7 @@ spot14 = Spot.create({
   category: 'Canvas tent',
   price: 95
 })
+spot14.photo.attach(io: open('https://trendy-camp-seeds.s3.us-west-2.amazonaws.com/sky-dancers.jpg'), filename: 'sky-dancers.jpg')
 
 spot15 = Spot.create({
   name: 'North Campground',
@@ -129,14 +145,16 @@ spot15 = Spot.create({
   category: 'Tent',
   price: 20
 })
+spot15.photo.attach(io: open('https://trendy-camp-seeds.s3.us-west-2.amazonaws.com/north-campground.jpg'), filename: 'north-campground.jpg')
 
 spot16 = Spot.create({
   name: 'Zion Backcountry Sheep Camps',
   description: "You can't get much more authentic and unique than spending a night under the stars in a sheep camp! These two were used as traditional sheep camps and would port to a new location each time the sheep were trailed to new pasture.",
   amenities: 'Potable water available, Showers available, Picnic table available, Bins available',
-  category: 'Onsite rv or trailer',
+  category: 'Cabin',
   price: 105
 })
+spot16.photo.attach(io: open('https://trendy-camp-seeds.s3.us-west-2.amazonaws.com/sheep-camp.jpg'), filename: 'sheep-camp.jpg')
 
 spot17 = Spot.create({
   name: 'Apple Hollow Tiny House',
@@ -145,6 +163,7 @@ spot17 = Spot.create({
   category: 'Cabin',
   price: 215
 })
+spot17.photo.attach(io: open('https://trendy-camp-seeds.s3.us-west-2.amazonaws.com/apple-hollow.jpg'), filename: 'apple-hollow.jpg')
 
 spot18 = Spot.create({
   name: 'Yurt Glamping, stargazing',
@@ -153,6 +172,7 @@ spot18 = Spot.create({
   category: 'Yurt',
   price: 130
 })
+spot18.photo.attach(io: open('https://trendy-camp-seeds.s3.us-west-2.amazonaws.com/yurt-stargazing.jpg'), filename: 'yurt-stargazing.jpg')
 
 spot19 = Spot.create({
   name: 'Zen House',
@@ -161,6 +181,7 @@ spot19 = Spot.create({
   category: 'Cabin',
   price: 135
 })
+spot19.photo.attach(io: open('https://trendy-camp-seeds.s3.us-west-2.amazonaws.com/zen-house.jpg'), filename: 'zen-house.jpg')
 
 spot20 = Spot.create({
   name: 'Cozy Hobbit House on Bainbridge',
@@ -169,3 +190,4 @@ spot20 = Spot.create({
   category: 'Cabin',
   price: 85
 })
+spot20.photo.attach(io: open('https://trendy-camp-seeds.s3.us-west-2.amazonaws.com/hobbit-house.jpg'), filename: 'hobbit-house.jpg')
