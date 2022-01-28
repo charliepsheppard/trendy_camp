@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
-import { fetchSpots } from './actions/spot_actions';
+import { fetchSpots } from './util/spot_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
   window.store = store;
