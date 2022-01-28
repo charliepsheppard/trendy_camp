@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
+import { fetchSpots } from './actions/spot_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   window.store = store;
@@ -20,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
+  window.fetchSpots = fetchSpots();
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);

@@ -32,7 +32,7 @@ spot2.photo.attach(io: open('https://trendy-camp-seeds.s3.us-west-2.amazonaws.co
 
 spot3 = Spot.create({
   name: 'North Fork Campground',
-  description: 'Taste the rainforest at North Fork Campground. Towering in at a modest 520 feet elevation, this campground is small but sweet with under ten sites in a temperate rainforest setting. Wet your primitive camping whistle any time of year.'
+  description: 'Taste the rainforest at North Fork Campground. Towering in at a modest 520 feet elevation, this campground is small but sweet with under ten sites in a temperate rainforest setting. Wet your primitive camping whistle any time of year.',
   amenities: 'Picnic table available',
   category: 'Tent',
   price: 30
@@ -41,7 +41,7 @@ spot3.photo.attach(io: open('https://trendy-camp-seeds.s3.us-west-2.amazonaws.co
 
 spot4 = Spot.create({
   name: 'Hoh Cabin',
-  description: 'Expect a fantastical, unique, and otherworldly experience getting to sleep in America’s most popular rainforest at Hoh Campground. Get a site year-round along the Hoh River, put your feet up, and listen to the magical music all around you. Rain or no rain make sure to do the Hall of Mosses trail. It may be cold and it may be wet, but remember adventurers it is an experience you will never forget!'
+  description: 'Expect a fantastical, unique, and otherworldly experience getting to sleep in America’s most popular rainforest at Hoh Campground. Get a site year-round along the Hoh River, put your feet up, and listen to the magical music all around you. Rain or no rain make sure to do the Hall of Mosses trail. It may be cold and it may be wet, but remember adventurers it is an experience you will never forget!',
   amenities: 'Potable water available, Kitchen available, Shower available, Picnic table available',
   category: 'Cabin',
   price: 35
