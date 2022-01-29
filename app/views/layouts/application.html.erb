@@ -8,6 +8,9 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
+  <script>
+    window.banner = "<%= image_url('banner-image.jpg') %>"
+  </script>
 
   <body>
     <%= yield %>
