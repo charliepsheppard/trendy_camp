@@ -17,10 +17,15 @@ $primary-text: #333333;
   color: $primary-text;
 }
 
+.nav-logo-link {
+  text-decoration: none;
+  color: $primary-text;
+}
+
 .session-link-nav {
   // text-align: right;
-  display: inline;
   margin-top: 1.8rem;
+  display: inline;
 }
 
 .session-link {
