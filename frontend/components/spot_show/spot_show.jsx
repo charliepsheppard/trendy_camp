@@ -18,11 +18,11 @@ class SpotShow extends React.Component {
 
     return (
       <div>
-        {/* <h1>Something goes here</h1>
+        {/* <h1>Something goes here</h1> */}
         <SpotDetail spot={this.props.spot} />
-        <h2>{this.props.spot.name}</h2> */}
+        {/* <h2>{this.props.spot.name}</h2> */}
         {/* <p>{this.props.spot.description}</p> */}
-        <h1>{this.props.spot.name}</h1>
+        {/* <h1>{this.props.spot.name}</h1> */}
       </div>
     )
   };

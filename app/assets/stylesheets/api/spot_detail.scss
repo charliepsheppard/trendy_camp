@@ -1,0 +1,29 @@
+$button: #41d9ac;
+$primary-text: #333333;
+
+.spot-detail-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4rem;
+  // width: 40%;
+  height: 25rem;
+}
+
+.spot-detail-photo-container {
+  width: 40%;
+}
+
+.spot-photo {
+  width: 100%;
+  height: 25rem;
+  object-fit: cover;
+}
+
+.spot-detail-info {
+  // height: 500px;
+  width: 25rem;
+  margin-right: 6.25rem;
+  color: $primary-text;
+  font-family: Arial, Helvetica, sans-serif;
+}
