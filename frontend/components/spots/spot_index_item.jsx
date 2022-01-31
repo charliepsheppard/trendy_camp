@@ -1,11 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const SpotIndexItem = ({ spot }) => {
   return (
     // <div className="spot-index-item-container">
       <div className="spot-index-item-content">
-        <img src={spot.photoUrl} className="spot-index-item-photo" alt="" />
-        <p>{spot.name}</p>
+        <Link to={`/spots/${spot.id}`} className="spot-index-item-link">
+          <img src={spot.photoUrl} className="spot-index-item-photo" alt="" />
+          <p>{spot.name}</p>
+        </Link>
       </div>
     // </div>
   );

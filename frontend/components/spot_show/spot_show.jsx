@@ -17,7 +17,7 @@ class SpotShow extends React.Component {
     }
 
     return (
-      <div>
+      <div className="show-page">
         {/* <h1>Something goes here</h1> */}
         <SpotDetail spot={this.props.spot} />
         {/* <h2>{this.props.spot.name}</h2> */}

@@ -12,7 +12,7 @@ const App = () => {
   return (
     <div>
       <header className="nav-header">
-        <h1 className="nav-logo">TrendyCamp</h1>
+        <h1 className="nav-logo"><Link to="/" className="nav-logo-link">TrendyCamp</Link></h1>
         <GreetingContainer />
       </header>
       <Switch>
