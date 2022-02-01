@@ -77,7 +77,7 @@ class LoginSessionForm extends React.Component {
             <button className="session-submit" type="submit">Log in</button>
             <br/>
             <button className="demo-submit" onClick={this.handleDemoLogin}>Demo log in</button>
-            <span className="action-prompt">Don't have a hipcamp account? {this.props.navLink}</span>
+            <span className="action-prompt">Don't have a TrendyCamp account? {this.props.navLink}</span>
           </div>
         </form>
       </div>

@@ -9,6 +9,7 @@ require 'open-uri'
 
 User.delete_all
 Spot.delete_all
+Review.delete_all
 
 demoUser = User.create({ first_name: 'Demo', last_name: 'User', email: 'demo@demo.com', zip_code: '05452', password: '123456' })
 
@@ -191,3 +192,11 @@ spot20 = Spot.create({
   price: 85
 })
 spot20.photo.attach(io: open('https://trendy-camp-seeds.s3.us-west-2.amazonaws.com/hobbit-house.jpg'), filename: 'hobbit-house.jpg')
+
+review1 = Review.create({
+  title: 'Great stay in a beautiful yurt',
+  body: 'We had a wonderful stay at The Castle House. It was beautiful and the stars were amazing. Pretty much every night we would sit in the pool and look up at the stars. I would absolutely recommend this to a friend.',
+  rating: 5,
+  user_id: demoUser.id,
+  spot_id: spot9.id
+})
