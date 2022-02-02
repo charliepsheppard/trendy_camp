@@ -200,3 +200,11 @@ review1 = Review.create({
   user_id: demoUser.id,
   spot_id: spot9.id
 })
+
+review2 = Review.create({
+  title: 'Not a great stay',
+  body: 'There were all sorts of problems. The place was dirty and I felt like I had to clean the whole place myself. I will likely not be returning.',
+  rating: 2,
+  user_id: demoUser.id,
+  spot_id: spot1.id
+})

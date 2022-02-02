@@ -1,8 +1,13 @@
 import React from 'react';
+import ReviewIndex from '../reviews/review_index';
 
 class SpotDetail extends React.Component {
+  
   render() {
+    console.log('in spotdetail: ', this.props.reviews)
+    console.log(this.props);
     const { spot } = this.props;
+    const reviews = this.props.reviews ? Object.values(this.props.reviews) : [];
     return (
       <div className="spot-detail-container">
           <div className="spot-detail-info-container">
@@ -12,7 +17,7 @@ class SpotDetail extends React.Component {
           <div className="spot-detail-info">
             <h1>{spot.name}</h1>
             <p className="spot-detail-info-desc">{spot.description}</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, inventore corrupti. Accusamus, consequuntur ipsa totam vitae distinctio dolorem omnis voluptatum veritatis non. Voluptate dolorum totam laudantium nemo magni placeat alias?
+            {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, inventore corrupti. Accusamus, consequuntur ipsa totam vitae distinctio dolorem omnis voluptatum veritatis non. Voluptate dolorum totam laudantium nemo magni placeat alias?
             Aut animi laudantium tempora quas dolorem impedit neque, exercitationem iste voluptatum, vero debitis suscipit? In mollitia labore eum perferendis porro amet natus esse vel omnis. Expedita repellendus consequatur aspernatur accusamus!
             Magni totam rerum cumque tempore fuga. Cupiditate officiis eius itaque reiciendis quod eaque sunt suscipit dolore alias, error quidem quo similique quibusdam, veniam temporibus doloremque necessitatibus explicabo accusamus. Debitis, tenetur!
             Necessitatibus est quos aliquam eos accusamus quia officiis dignissimos laboriosam omnis magni quae doloremque, unde autem dolorem, voluptas ut deleniti quidem ducimus, nesciunt velit temporibus. Sed ut earum saepe consectetur?
@@ -31,7 +36,13 @@ class SpotDetail extends React.Component {
             Velit aspernatur delectus fugiat perferendis aut iure consequuntur reprehenderit natus aliquid reiciendis nisi vero esse quasi tempora est, pariatur saepe! Error eligendi quasi quis perspiciatis repellat! Similique quod odio quo.
             Quaerat ex temporibus laudantium debitis similique dolores voluptas fugiat, illo cupiditate omnis obcaecati quibusdam nihil voluptatum dignissimos. Nesciunt sit reprehenderit enim accusantium ducimus corrupti, quis tempora, beatae possimus officia repellat!
             Est neque omnis earum cumque? Officiis odio facere esse qui molestias. Minima officia illum, repellat praesentium eaque optio libero amet, magnam impedit molestias cumque officiis ullam odio explicabo rerum repudiandae?
-            Eaque cupiditate error, voluptas sit quasi molestiae commodi consectetur dolorum odio numquam quas atque dolore libero consequatur eius rem quia animi. Officiis ipsum sequi distinctio a rem. At, esse id?</p>
+            Eaque cupiditate error, voluptas sit quasi molestiae commodi consectetur dolorum odio numquam quas atque dolore libero consequatur eius rem quia animi. Officiis ipsum sequi distinctio a rem. At, esse id?</p> */}
+          </div>
+          <div>
+            {/* {
+              this.props.reviews && */}
+              <ReviewIndex reviews={reviews} session={this.props.session} deleteReview={this.props.deleteReview} />
+            {/* } */}
           </div>
           <div className="booking-box">
             <h3 className="booking-box-info">${spot.price}</h3>

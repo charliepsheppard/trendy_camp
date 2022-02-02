@@ -4,21 +4,21 @@ export const RECEIVE_ALL_REVIEWS = 'RECEIVE_ALL_REVIEWS';
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 export const REMOVE_REVIEW = 'REMOVE_REVIEW';
 
-const receiveAllReviews = reviews => {
+export const receiveAllReviews = reviews => {
   return {
     type: RECEIVE_ALL_REVIEWS,
     reviews
   };
 }
 
-const receiveReview = review => {
+export const receiveReview = review => {
   return {
     type: RECEIVE_REVIEW,
     review
   };
 }
 
-const removeReview = reviewId => {
+export const removeReview = reviewId => {
   return {
     type: REMOVE_REVIEW,
     reviewId
@@ -26,7 +26,7 @@ const removeReview = reviewId => {
 }
 
 export const fetchAllReviews = spotId => dispatch => {
-  return ReviewAPIUtil.fetchAllReivews(spotId)
+  return ReviewAPIUtil.fetchAllReviews(spotId)
     .then(reviews => dispatch(receiveAllReviews(reviews)));
 }
 
@@ -36,7 +36,7 @@ export const createReview = review => dispatch => {
 }
 
 export const updateReview = review => dispatch => {
-  return ReviewAPIUtil.updateRevew(review)
+  return ReviewAPIUtil.updateReview(review)
     .then(review => dispatch(receiveReview(review)));
 }
 
