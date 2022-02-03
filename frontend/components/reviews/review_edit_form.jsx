@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class ReviewForm extends React.Component {
+class ReviewEditForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      title: '',
-      body: '',
-      rating: 1
+      title: this.props.review.title,
+      body: this.props.review.body,
+      rating: this.props.review.rating,
+      id: this.props.review.id
     }
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -22,29 +23,32 @@ class ReviewForm extends React.Component {
     e.preventDefault();
     const spotId = parseInt(this.props.match.params.spotId);
     const review = Object.assign({}, this.state, { spot_id: spotId })
-    this.props.createReview(review);
-    this.props.history.replace(`/spots/${this.props.match.params.spotId}`)
+    debugger;
+    this.props.updateReview(review);
+    this.props.history.push(`/spots/${this.props.match.params.spotId}`)
+    // location.reload()
   }
 
   render() {
+    console.log('review edit form: ', this.props);
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <label>Title: 
-            <input 
+          <label>Title:
+            <input
               type="text"
               value={this.state.title}
               onChange={this.handleChange('title')}
             />
           </label>
-          <label>Review: 
-            <textarea 
+          <label>Review:
+            <textarea
               value={this.state.body}
               onChange={this.handleChange('body')}
             />
           </label>
-          <label>1: 
-            <input 
+          <label>1:
+            <input
               type="radio"
               value="1"
             />
@@ -70,11 +74,11 @@ class ReviewForm extends React.Component {
             />
           </label>
           <button>Leave review</button>
-          <button><Link to={`/spots/${this.props.match.params.spotId}`}>Done</Link></button>
+          {/* <button><Link to={`/spots/${this.props.match.params.spotId}`}>Done</Link></button> */}
         </form>
       </div>
     )
   }
 }
 
-export default ReviewForm
+export default ReviewEditForm;

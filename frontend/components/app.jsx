@@ -6,7 +6,9 @@ import LogInFormContainer from './session_form/login_form_container';
 import GreetingContainer from './greeting/greeting_container';
 import SpotsIndexContainer from './spots/spots_index_container';
 import SpotShowContainer from './spot_show/spot_show_container';
-import { AuthRoute } from '../util/route_util';
+import ReviewFormContainer from './reviews/review_form_container';
+import ReviewEditFormContainer from './reviews/review_edit_form_container';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => {
   return (
@@ -18,6 +20,8 @@ const App = () => {
       <Switch>
         <AuthRoute exact path="/login" component={LogInFormContainer} />
         <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+        <ProtectedRoute exact path="/spots/:spotId/reviews" component={ReviewFormContainer} />
+        <ProtectedRoute exact path="/spots/:spotId/reviews/:id" component={ReviewEditFormContainer} />
         <Route exact path="/" component={SpotsIndexContainer} />
         <Route path="/spots/:spotId" component={SpotShowContainer} />
         {/* <Route exact path="/login" component={LogInFormContainer} />

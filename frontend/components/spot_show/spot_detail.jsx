@@ -1,5 +1,6 @@
 import React from 'react';
 import ReviewIndex from '../reviews/review_index';
+import { Link } from 'react-router-dom';
 
 class SpotDetail extends React.Component {
   
@@ -38,17 +39,15 @@ class SpotDetail extends React.Component {
             Est neque omnis earum cumque? Officiis odio facere esse qui molestias. Minima officia illum, repellat praesentium eaque optio libero amet, magnam impedit molestias cumque officiis ullam odio explicabo rerum repudiandae?
             Eaque cupiditate error, voluptas sit quasi molestiae commodi consectetur dolorum odio numquam quas atque dolore libero consequatur eius rem quia animi. Officiis ipsum sequi distinctio a rem. At, esse id?</p> */}
           </div>
-          <div>
-            {/* {
-              this.props.reviews && */}
-              <ReviewIndex reviews={reviews} session={this.props.session} deleteReview={this.props.deleteReview} />
-            {/* } */}
-          </div>
           <div className="booking-box">
             <h3 className="booking-box-info">${spot.price}</h3>
             <p className="booking-box-info">Average per night</p>
             <button>Request to book</button>
           </div>
+        </div>
+        <div>
+          <ReviewIndex reviews={reviews} session={this.props.session} deleteReview={this.props.deleteReview} />
+          <button><Link to={`/spots/${spot.id}/reviews`}>Leave a review</Link></button>
         </div>
       </div>
     )

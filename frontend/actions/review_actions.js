@@ -11,7 +11,7 @@ export const receiveAllReviews = reviews => {
   };
 }
 
-export const receiveReview = review => {
+export const receiveReview = ({review}) => {
   return {
     type: RECEIVE_REVIEW,
     review
