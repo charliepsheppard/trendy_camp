@@ -13,6 +13,7 @@ $primary-text: #333333;
 .inner-container {
   display: flex;
   flex-direction: column;
+  margin-left: 150px;
 }
 
 .spot-detail-container {
@@ -72,11 +73,11 @@ $primary-text: #333333;
 }
 
 .booking-box {
-  width: 50%;
+  width: 470px;
   height: 24rem;
   // align-self: auto;
   margin-left: 150px;
-  margin-right: 20px;
+  margin-right: 150px;
   top: 25px;
   background-color: white;
   border: 1px solid black;
@@ -86,4 +87,33 @@ $primary-text: #333333;
 .booking-box-info {
   margin-left: 1rem;
   width: 100%;
+}
+
+.bold-checkin-detail {
+  font-weight: 600;
+}
+
+.checkin-details-container {
+  display: flex;
+  flex-direction: row;
+  padding: 15px;
+}
+
+.checkin-general {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.checkin-details {
+  padding-right: 40px;
+  margin-bottom: 40px;
+  margin-right: 20px;
+}
+
+.details-label {
+  padding-right: 40px;
+}
+
+.checkin-detail {
+  display: block;
 }
