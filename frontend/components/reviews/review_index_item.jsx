@@ -14,12 +14,15 @@ class ReviewIndexItem extends React.Component {
   }
 
   render() {
-    console.log(this.props.review);
     return (
-      <div>
-        <h3>{this.props.review.title}</h3>
-        <button><Link to={`/spots/${this.props.review.spotId}/reviews/${this.props.review.id}`} >Edit review</Link></button>
-        <button onClick={this.handleDelete}>Delete review</button>
+      <div className="review-content-container">
+        <h3 className="review-content-heading">{this.props.review.title}</h3>
+        <p className="review-recommended"><strong className="review-user-name">{this.props.review.user.first_name} {this.props.review.user.last_name[0]}</strong>. recommends this listing.</p>
+        <p className="review-body">{this.props.review.body}</p>
+        <div className="edit-delete-buttons">
+          <button className="review-button"><Link to={`/spots/${this.props.review.spotId}/reviews/${this.props.review.id}`} className="edit-button-link" >Edit review</Link></button>
+          <button className="review-button" onClick={this.handleDelete}>Delete review</button>
+        </div>
       </div>
     )
   };
