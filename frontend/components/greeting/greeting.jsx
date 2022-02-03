@@ -13,7 +13,6 @@ const Greeting = ({ currentUser, logout }) => {
   const personalGreeting = () => {
     return (
       <div className="session-link-nav">
-        {/* <h2>Hi {currentUser.firstName}!</h2> */}
         <span className="session-link-nav-logout" onClick={logout}>Log Out</span>
       </div>
     );

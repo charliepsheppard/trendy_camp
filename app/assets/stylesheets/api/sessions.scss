@@ -8,6 +8,8 @@ $primary-text: #333333;
 .nav-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin: 25px;
 }
 
 .nav-logo {
@@ -20,13 +22,15 @@ $primary-text: #333333;
 .nav-logo-link {
   text-decoration: none;
   color: $primary-text;
+  font-size: 1.8rem;
+  font-weight: 600;
 }
 
-.session-link-nav {
-  // text-align: right;
-  margin-top: 1.8rem;
-  display: inline;
-}
+// .session-link-nav {
+//   // text-align: right;
+//   margin-top: 1.8rem;
+//   display: inline;
+// }
 
 .session-link {
   text-decoration: none;
