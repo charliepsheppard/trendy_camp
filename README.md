@@ -15,6 +15,10 @@ TrendyCamp is a clone of the popular site HipCamp. The purpose of the site is to
 
 ![splash page](https://user-images.githubusercontent.com/45123867/152576191-ae99cba1-b130-4355-87b5-da609c514eae.png)
 
+## Log in
+
+![log in](https://user-images.githubusercontent.com/45123867/152581840-ed021d8c-dff4-44d2-bd26-0ec84fbf5910.png)
+
 ## Spots index
 
 ![spots index](https://user-images.githubusercontent.com/45123867/152576983-f24ffbfe-c45f-47c0-a8fc-ddc0309375c8.png)
@@ -31,7 +35,15 @@ TrendyCamp is a clone of the popular site HipCamp. The purpose of the site is to
 
 ### User auth
 
-I was challenged throughout this project, but user auth was one of the bigger ones that I faced. It forces you to really understand how the React/Redux cycle works as well as how the backend works to serve up information to the front end. It really allowed me to follow each piece. One of the issues I faced was creating a solid state shape by nesting my reducers into distinct sections in order to receive information in the way that is easiest to maniuplave via React. 
+I was challenged throughout this project, but user auth was one of the bigger ones that I faced. It forces you to really understand how the React/Redux cycle works as well as how the backend works to serve up information to the front end. It really allowed me to follow each piece. One of the issues I faced was creating a solid state shape by nesting my reducers into distinct sections in order to receive information in the way that is easiest to manipulate via React. 
+
+```javascript
+const rootReducer = combineReducers({
+  entities: entitiesReducer,
+  session: sessionReducer,
+  errors: errorsReducer
+});
+```
 
 ```javascript
 const entitiesReducer = combineReducers({
@@ -39,4 +51,23 @@ const entitiesReducer = combineReducers({
   spots: spotsReducer,
   reviews: reviewsReducer
 });
+```
+
+### JBuilder
+
+Another difficulty that I worked through was utilizing JBuilder to serve up the JSON structure that I needed in order to access particular information. The area where this was most prevalent was when implementing the review feature. I had to be able to access the right review for a particular user, and in order to do so I had to have access to the user in my slice of state for reviews. Figuring out this structure was difficult, as my familiarity with JBuilder was limited when starting this project. 
+
+```ruby
+json.spot do 
+  json.partial! '/api/spots/spot', spot: @spot
+  json.reviewIds @spot.reviews.pluck(:id)
+end
+
+@spot.reviews.each do |review|
+  json.reviews do 
+    json.set! review.id do
+      json.partial! 'api/reviews/review', review: review
+    end
+  end
+end
 ```
