@@ -3,4 +3,7 @@ class Spot < ApplicationRecord
 
   has_one_attached :photo
 
+  has_many :reviews,
+    class_name: :Review
+
 end

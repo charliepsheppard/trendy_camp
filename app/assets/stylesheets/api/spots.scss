@@ -5,9 +5,29 @@
 $button: #41d9ac;
 $primary-text: #333333;
 
+.splash-heading-container {
+  text-align: center;
+  color: $primary-text;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-primary-heading {
+  font-size: 3.6rem;
+  font-weight: 600;
+  margin: 20px 0;
+  margin-top: 80px;
+}
+
+.main-secondary-heading {
+  font-size: 1.5rem;
+  margin: 20px 0;
+}
+
 .spot-index-item-container {
   display: flex;
   flex-wrap: wrap;
+  width: 75%;
+  margin: 0 auto;
   // flex-flow: row wrap;
   justify-content: space-around;
   align-content: space-around;
@@ -21,8 +41,8 @@ $primary-text: #333333;
   width: 20%;
   height: 300px;
   margin: .8rem;
-  background-color: rgb(243, 237, 231);
-  padding: .3rem;
+  background-color: rgb(241, 241, 241);
+  // padding: .3rem;
   border-radius: 5px;
 }
 
@@ -35,10 +55,26 @@ $primary-text: #333333;
   width: 100%;
   height: 60%;
   object-fit: cover;
+  border-radius: 5px 5px 0 0;
 }
 
 .spot-index-item-link {
   text-decoration: none;
   color: $primary-text;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.spot-index-name {
+  margin: 10px;
+  font-weight: 600;
+}
+
+.spot-index-price {
+  margin: 10px;
+  font-size: 14px;
+}
+
+.spot-price-amount {
+  font-weight: 600;
+  font-size: 16px;
 }

@@ -10,6 +10,12 @@ $primary-text: #333333;
   display: flex;
 }
 
+.inner-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 150px;
+}
+
 .spot-detail-container {
   display: flex;
   // align-items: center;
@@ -31,26 +37,202 @@ $primary-text: #333333;
   // position: relative;
 }
 
+.spot-title {
+  color: $primary-text;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.spot-detail-info-desc {
+  line-height: 25px;
+}
+
 .spot-detail-info {
   // height: 500px;
   // width: 25rem;
   color: $primary-text;
   font-family: Arial, Helvetica, sans-serif;
-  width: 45%;
+  width: 100%;
   padding: 20px;
 }
 
+.review-button-container {
+  margin: 1rem;
+}
+
+.review-button {
+  height: 3rem;
+  width: 9rem;
+  background-color: $button;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.review-button:hover {
+  box-shadow: 1px 1px 5px #777777;
+}
+
+.review-button:active {
+  box-shadow: 1px 1px 5px #777777 inset;
+}
+
+.review-button-link {
+  text-decoration: none;
+  color: white;
+}
+
 .booking-box {
-  width: 20rem;
+  width: 380px;
   height: 24rem;
   // align-self: auto;
   margin-left: 150px;
-  top: 25px;
+  margin-right: 150px;
+  top: 0px;
   background-color: white;
-  border: 1px solid black;
+  border: 1px solid rgb(228, 227, 227);
+  box-shadow: 1px .5px 2px rgb(228, 227, 227);
   position: sticky;
+  color: $primary-text;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .booking-box-info {
-  margin-left: 1rem;
+  margin: 1rem;
+  width: 100%;
+}
+
+.booking-box-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-box-heading {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.date-selector {
+  display: flex;
+}
+
+.booking-label {
+  font-weight: 600;
+}
+
+.date-input-wrapper {
+  border: 1px solid rgb(228, 227, 227);
+  padding: 10px 0;
+}
+
+.date-input {
+  border: none;
+  color: $primary-text;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.guest-number-container {
+  width: 100%;
+  border-bottom: 1px solid rgb(228, 227, 227);
+  padding-top: 10px;
+}
+
+.guests-select {
+  border: none;
+  display: block;
+  width: 98%;
+  padding: 10px 0;
+}
+
+.subtotal-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px solid rgb(228, 227, 227);
+}
+
+.booking-request-button {
+  margin: 20px 10px;
+  padding: 20px 0;
+  background-color: $button;
+  border: 4px solid $button;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.booking-request-button:hover {
+  border: 4px solid $button;
+  color: $button;
+  background-color: #FFF;
+}
+
+.bold-checkin-detail {
+  font-weight: 600;
+}
+
+.checkin-details-container {
+  display: flex;
+  flex-direction: row;
+  padding: 15px;
+  border-bottom: 1px solid rgb(228, 227, 227);
+
+}
+
+.checkin-general {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.checkin-details {
+  padding-right: 40px;
+  margin-bottom: 40px;
+  margin-right: 20px;
+  color: $primary-text;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.details-label {
+  padding-right: 40px;
+  color: $primary-text;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.checkin-detail {
+  display: block;
+}
+
+.info-cards-container {
+  display: flex;
+}
+
+.info-card {
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid rgb(228, 227, 227);
+  width: 40%;
+  height: 300px;
+  box-shadow: 1px .5px 2px rgb(228, 227, 227);
+  color: $primary-text;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.info-card-heading {
+  font-size: 1.2rem;
+  color: $primary-text;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 580;
+}
+
+.info-card-item {
+  margin: 10px 0;
+}
+
+.checkin-detail {
+  margin-bottom: 10px;
 }

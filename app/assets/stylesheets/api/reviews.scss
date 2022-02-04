@@ -1,0 +1,128 @@
+// Place all the styles related to the api/reviews controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$button: #41d9ac;
+$primary-text: #333333;
+
+.review-content-container {
+  // border-top: 1px solid rgb(228, 227, 227);
+  border-bottom: 1px solid rgb(228, 227, 227);
+  padding: 20px 0;
+  margin: 20px 0;
+  color: $primary-text;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.review-content-heading {
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.review-user-name {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.review-recommended {
+  margin-bottom: 20px;
+}
+
+.review-body {
+  margin-bottom: 30px;
+}
+
+.edit-delete-buttons {
+  display: flex;
+  justify-content: space-around;
+  align-self: center;
+}
+
+.edit-button-link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.review-button {
+  background-color: $button;
+  color: #fff;
+  height: 4.5rem;
+  width: 7rem;
+}
+
+.review-form-container {
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 100px;
+  width: 30%;
+}
+
+::placeholder {
+  color: $primary-text;
+}
+
+.title-input {
+  height: 20px;
+  margin-bottom: 1rem;
+  color: $primary-text;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 20px;
+  font-size: 1rem;
+  border: 1px solid rgb(228, 227, 227);
+}
+
+.body-input {
+  height: 150px;
+  color: $primary-text;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 20px;
+  font-size: 1rem;
+  border: 1px solid rgb(228, 227, 227);
+  margin-bottom: 10px;
+}
+
+.recommended-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 40px;
+  color: $primary-text;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.review-submit, .review-done-button {
+  height: 3.4rem;
+  margin-top: 1rem;
+  background: $button;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: rgb(255, 255, 255);
+}
+
+.review-submit:hover {
+  box-shadow: 1px 1px 5px #777777;
+  cursor: pointer;
+}
+
+.review-submit:active {
+  box-shadow: 1px 1px 5px #777777 inset;
+}
+
+.review-done-button:hover {
+  box-shadow: 1px 1px 5px #777777;
+  cursor: pointer;
+}
+
+.review-done-button:active {
+  box-shadow: 1px 1px 5px #777777 inset;
+  cursor: pointer;
+}
+
+.review-done-link {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
