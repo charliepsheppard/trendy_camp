@@ -71,3 +71,5 @@ end
   end
 end
 ```
+
+By nesting the review id within the spot slice of state I was able to easily access the correct review for that particular user. 
