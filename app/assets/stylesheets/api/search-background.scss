@@ -1,6 +1,8 @@
 .search-background-container {
   height: 30rem;
   padding-bottom: 1rem;
+  width: 75%;
+  margin: 0 auto;
   // background-size: cover;
 }
 
@@ -8,4 +10,5 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 60px;
 }

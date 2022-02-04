@@ -33,48 +33,36 @@ class ReviewEditForm extends React.Component {
     console.log('review edit form: ', this.props);
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>Title:
+        <form onSubmit={this.handleSubmit} className="review-form-container">
+          <input
+            type="text"
+            value={this.state.title}
+            onChange={this.handleChange('title')}
+            placeholder="Title..."
+            className="title-input"
+          />
+          <textarea
+            value={this.state.body}
+            onChange={this.handleChange('body')}
+            placeholder="What did you think?..."
+            className="body-input"
+          />
+          <div className="recommended-container">
+            <label>Recommend
             <input
-              type="text"
-              value={this.state.title}
-              onChange={this.handleChange('title')}
-            />
-          </label>
-          <label>Review:
-            <textarea
-              value={this.state.body}
-              onChange={this.handleChange('body')}
-            />
-          </label>
-          <label>1:
+                type="radio"
+                value="true"
+              />
+            </label>
+            <label>Not recommend
             <input
-              type="radio"
-              value="1"
-            />
-          </label>
-          <label>2:
-            <input
-              type="radio"
-            />
-          </label>
-          <label>3:
-            <input
-              type="radio"
-            />
-          </label>
-          <label>4:
-            <input
-              type="radio"
-            />
-          </label>
-          <label>5:
-            <input
-              type="radio"
-            />
-          </label>
-          <button>Leave review</button>
-          {/* <button><Link to={`/spots/${this.props.match.params.spotId}`}>Done</Link></button> */}
+                type="radio"
+                value="false"
+              />
+            </label>
+          </div>
+          <button className="review-submit">Edit review</button>
+          <button className="review-done-button"><Link to={`/spots/${this.props.match.params.spotId}`} className="review-done-link">Done</Link></button>
         </form>
       </div>
     )
