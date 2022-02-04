@@ -11,4 +11,10 @@ TrendyCamp is a clone of the popular site HipCamp. The purpose of the site is to
 * React router
 * Redux
 
+## Splash page
+
 ![screen shot](https://user-images.githubusercontent.com/45123867/152576191-ae99cba1-b130-4355-87b5-da609c514eae.png)
+
+# Individual site page
+
+
