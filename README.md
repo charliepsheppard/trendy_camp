@@ -21,4 +21,8 @@ TrendyCamp is a clone of the popular site HipCamp. The purpose of the site is to
 
 ## Individual spot
 
+![individual spot](https://user-images.githubusercontent.com/45123867/152578447-26a42311-87f0-4856-b6c3-11bef91b2881.png)
+
+## Leave a review
+
 
