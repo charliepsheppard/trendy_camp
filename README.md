@@ -1,24 +1,13 @@
-# README
+# TrendyCamp
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+TrendyCamp is a clone of the popular site HipCamp. The purpose of the site is to allow people to book campsites, cabins, and any other form of glamping on both public and private land. The site also allows for hosts to put up their land, campgrounds or vacation rentals for users to book.
 
-Things you may want to cover:
+[Live site](https://trendycamp.herokuapp.com/#/)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Technologies used
+* Postgres
+* Rails
+* React
+* React router
+* Redux
+* 
