@@ -7,7 +7,7 @@ class ReviewForm extends React.Component {
     this.state = {
       title: '',
       body: '',
-      rating: 1
+      recommended: true
     }
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -22,8 +22,9 @@ class ReviewForm extends React.Component {
     e.preventDefault();
     const spotId = parseInt(this.props.match.params.spotId);
     const review = Object.assign({}, this.state, { spot_id: spotId })
+    console.log('review in review form: ', review);
     this.props.createReview(review);
-    this.props.history.replace(`/spots/${this.props.match.params.spotId}`)
+    this.props.history.push(`/spots/${this.props.match.params.spotId}`)
   }
 
   render() {

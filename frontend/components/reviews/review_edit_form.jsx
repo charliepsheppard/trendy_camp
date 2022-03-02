@@ -23,14 +23,13 @@ class ReviewEditForm extends React.Component {
     e.preventDefault();
     const spotId = parseInt(this.props.match.params.spotId);
     const review = Object.assign({}, this.state, { spot_id: spotId })
-    debugger;
     this.props.updateReview(review);
     this.props.history.push(`/spots/${this.props.match.params.spotId}`)
     // location.reload()
   }
 
   render() {
-    console.log('review edit form: ', this.props);
+    // console.log('review edit form: ', this.props);
     return (
       <div>
         <form onSubmit={this.handleSubmit} className="review-form-container">
