@@ -11,6 +11,7 @@ class ReviewForm extends React.Component {
       errors: []
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleChange(type) {
@@ -19,12 +20,24 @@ class ReviewForm extends React.Component {
     };
   }
 
+  handleClick(e) {
+    e.preventDefault();
+    $('.selected-option').removeClass("selected-option");
+    $(e.currentTarget).addClass("selected-option");
+    this.state.recommended ? this.setState({ recommended: false }) : this.setState({ recommended: true })
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const spotId = parseInt(this.props.match.params.spotId);
-    const review = Object.assign({}, this.state, { spot_id: spotId })
-    console.log('review in review form: ', review);
-    this.props.createReview(review)
+    const review =  {
+      title: this.state.title,
+      body: this.state.body,
+      recommended: this.state.recommended
+    }
+    const reviewToSubmit = Object.assign({}, review, { spot_id: spotId })
+    // console.log('review in review form: ', review);
+    this.props.createReview(reviewToSubmit)
       .then(() => this.props.history.push(`/spots/${this.props.match.params.spotId}`))
       .fail(() => this.setState({ errors: this.props.errors }))
   }
@@ -42,6 +55,7 @@ class ReviewForm extends React.Component {
   }
 
   render() {
+    // console.log('state in review form', this.state.recommended);
     return (
       <div>
         <form onSubmit={this.handleSubmit} className="review-form-container">
@@ -62,7 +76,7 @@ class ReviewForm extends React.Component {
             className="body-input"
           />
           <div className="recommended-container">
-            <label>Recommend
+            {/* <label>Recommend
             <input
                 type="radio"
                 value="true"
@@ -73,6 +87,20 @@ class ReviewForm extends React.Component {
                 type="radio"
                 value="false"
               />
+            </label> */}
+            <label>Recommend
+              <button 
+                type="button"
+                className="recommend-btn selected-option"
+                onClick={this.handleClick}
+              >Yes</button>
+            </label>
+            <label>Not Recommend
+              <button 
+                type="button"
+                className="recommend-btn"
+                onClick={this.handleClick}
+              >No</button>
             </label>
           </div>
           <button className="review-submit">Leave review</button>
