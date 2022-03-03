@@ -53,7 +53,8 @@ export const createReview = review => dispatch => {
 
 export const updateReview = review => dispatch => {
   return ReviewAPIUtil.updateReview(review)
-    .then(review => dispatch(receiveReview(review)));
+    .then(review => dispatch(receiveReview(review)),
+      (res) => dispatch(receiveReviewErrors(res.responseJSON)));
 }
 
 export const deleteReview = reviewId => dispatch => {

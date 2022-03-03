@@ -7,7 +7,8 @@ class ReviewForm extends React.Component {
     this.state = {
       title: '',
       body: '',
-      recommended: true
+      recommended: true,
+      errors: []
     }
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -23,14 +24,30 @@ class ReviewForm extends React.Component {
     const spotId = parseInt(this.props.match.params.spotId);
     const review = Object.assign({}, this.state, { spot_id: spotId })
     console.log('review in review form: ', review);
-    this.props.createReview(review);
-    this.props.history.push(`/spots/${this.props.match.params.spotId}`)
+    this.props.createReview(review)
+      .then(() => this.props.history.push(`/spots/${this.props.match.params.spotId}`))
+      .fail(() => this.setState({ errors: this.props.errors }))
+  }
+
+  renderErrors() {
+    return (
+      <ul>
+        {this.state.errors.length > 0 ? this.props.errors.map((error, idx) => (
+          <li key={idx} className="error-display-item">
+            {error}
+          </li>
+        )) : <p></p>}
+      </ul>
+    )
   }
 
   render() {
     return (
       <div>
         <form onSubmit={this.handleSubmit} className="review-form-container">
+          <div className="error-display-container">
+            {this.props.errors.length === 0 ? <p></p> : this.renderErrors()}
+          </div>
           <input 
             type="text"
             value={this.state.title}

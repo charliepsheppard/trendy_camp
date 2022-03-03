@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 import { createReview } from '../../actions/review_actions';
 import ReviewForm from './review_form'
 
-// const mapStateToProps = (state, ownProps) => {
-//   return {
-//     spotId
-//   }
-// }
+const mapStateToProps = (state) => {
+  return {
+    errors: state.errors.review
+  }
+}
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -15,4 +15,4 @@ const mapDispatchToProps = dispatch => {
   };
 }
 
-export default connect(null, mapDispatchToProps)(ReviewForm);
+export default connect(mapStateToProps, mapDispatchToProps)(ReviewForm);
