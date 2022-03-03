@@ -5,5 +5,8 @@ class Spot < ApplicationRecord
 
   has_many :reviews,
     class_name: :Review
+  
+  has_many :bookings,
+    class_name: :Booking
 
 end
