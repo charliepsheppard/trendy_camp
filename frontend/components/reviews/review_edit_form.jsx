@@ -7,17 +7,34 @@ class ReviewEditForm extends React.Component {
     this.state = {
       title: this.props.review.title,
       body: this.props.review.body,
-      rating: this.props.review.rating,
+      recommended: this.props.review.recommended,
       id: this.props.review.id,
       errors: []
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.addClassToRecommendOnLoad = this.addClassToRecommendOnLoad.bind(this);
+  }
+
+  componentDidMount() {
+    this.addClassToRecommendOnLoad();
   }
 
   handleChange(type) {
     return e => {
       this.setState({ [type]: e.currentTarget.value });
     };
+  }
+
+  handleClick(e) {
+    e.preventDefault();
+    $('.selected-option').removeClass("selected-option");
+    $(e.currentTarget).addClass("selected-option");
+    this.setState({ recommended: e.currentTarget.value })
+  }
+
+  addClassToRecommendOnLoad() {
+    if (this.state.recommended === false) return $('#not-recommend').addClass('selected-option'); 
   }
 
   handleSubmit(e) {
@@ -42,7 +59,7 @@ class ReviewEditForm extends React.Component {
   }
 
   render() {
-    // console.log('review edit form: ', this.props);
+    console.log('review edit form: ', this.state.recommended);
     return (
       <div>
         <form onSubmit={this.handleSubmit} className="review-form-container">
@@ -64,16 +81,22 @@ class ReviewEditForm extends React.Component {
           />
           <div className="recommended-container">
             <label>Recommend
-            <input
-                type="radio"
-                value="true"
-              />
+              <button
+                id='recommend'
+                type="button"
+                className="recommend-btn"
+                value={true}
+                onClick={this.handleClick}
+              >Yes</button>
             </label>
-            <label>Not recommend
-            <input
-                type="radio"
-                value="false"
-              />
+            <label>Not Recommend
+              <button
+                id="not-recommend"
+                type="button"
+                value={false}
+                className="recommend-btn"
+                onClick={this.handleClick}
+              >No</button>
             </label>
           </div>
           <button className="review-submit">Edit review</button>
