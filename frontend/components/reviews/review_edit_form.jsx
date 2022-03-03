@@ -77,7 +77,7 @@ class ReviewEditForm extends React.Component {
             </label>
           </div>
           <button className="review-submit">Edit review</button>
-          <button className="review-done-button"><Link to={`/spots/${this.props.match.params.spotId}`} className="review-done-link">Done</Link></button>
+          <button className="review-done-button"><Link to={`/spots/${this.props.match.params.spotId}`} className="review-done-link">X</Link></button>
         </form>
       </div>
     )
