@@ -24,7 +24,7 @@ class ReviewForm extends React.Component {
     e.preventDefault();
     $('.selected-option').removeClass("selected-option");
     $(e.currentTarget).addClass("selected-option");
-    this.state.recommended ? this.setState({ recommended: false }) : this.setState({ recommended: true })
+    this.setState({ recommended: e.currentTarget.value })
   }
 
   handleSubmit(e) {
@@ -36,7 +36,6 @@ class ReviewForm extends React.Component {
       recommended: this.state.recommended
     }
     const reviewToSubmit = Object.assign({}, review, { spot_id: spotId })
-    // console.log('review in review form: ', review);
     this.props.createReview(reviewToSubmit)
       .then(() => this.props.history.push(`/spots/${this.props.match.params.spotId}`))
       .fail(() => this.setState({ errors: this.props.errors }))
@@ -55,7 +54,6 @@ class ReviewForm extends React.Component {
   }
 
   render() {
-    // console.log('state in review form', this.state.recommended);
     return (
       <div>
         <form onSubmit={this.handleSubmit} className="review-form-container">
@@ -76,28 +74,18 @@ class ReviewForm extends React.Component {
             className="body-input"
           />
           <div className="recommended-container">
-            {/* <label>Recommend
-            <input
-                type="radio"
-                value="true"
-              />
-            </label>
-            <label>Not recommend
-            <input
-                type="radio"
-                value="false"
-              />
-            </label> */}
             <label>Recommend
               <button 
                 type="button"
                 className="recommend-btn selected-option"
+                value={true}
                 onClick={this.handleClick}
               >Yes</button>
             </label>
             <label>Not Recommend
               <button 
                 type="button"
+                value={false}
                 className="recommend-btn"
                 onClick={this.handleClick}
               >No</button>
