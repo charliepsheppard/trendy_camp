@@ -46,7 +46,7 @@ class ReviewForm extends React.Component {
       <div>
         <form onSubmit={this.handleSubmit} className="review-form-container">
           <div className="error-display-container">
-            {this.props.errors.length === 0 ? <p></p> : this.renderErrors()}
+            {this.renderErrors()}
           </div>
           <input 
             type="text"

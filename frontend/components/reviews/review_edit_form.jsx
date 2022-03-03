@@ -8,7 +8,8 @@ class ReviewEditForm extends React.Component {
       title: this.props.review.title,
       body: this.props.review.body,
       rating: this.props.review.rating,
-      id: this.props.review.id
+      id: this.props.review.id,
+      errors: []
     }
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -23,9 +24,21 @@ class ReviewEditForm extends React.Component {
     e.preventDefault();
     const spotId = parseInt(this.props.match.params.spotId);
     const review = Object.assign({}, this.state, { spot_id: spotId })
-    this.props.updateReview(review);
-    this.props.history.push(`/spots/${this.props.match.params.spotId}`)
-    // location.reload()
+    this.props.updateReview(review)
+      .then(() => this.props.history.push(`/spots/${this.props.match.params.spotId}`))
+      .fail(() => this.setState({ errors: this.props.errors }))
+  }
+
+  renderErrors() {
+    return (
+      <ul>
+        {this.state.errors.length > 0 ? this.props.errors.map((error, idx) => (
+          <li key={idx} className="error-display-item">
+            {error}
+          </li>
+        )) : <p></p>}
+      </ul>
+    )
   }
 
   render() {
@@ -33,6 +46,9 @@ class ReviewEditForm extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit} className="review-form-container">
+          <div className="error-display-container">
+            {this.renderErrors()}
+          </div>
           <input
             type="text"
             value={this.state.title}
