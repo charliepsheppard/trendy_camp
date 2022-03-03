@@ -72,7 +72,7 @@ class SpotDetail extends React.Component {
               </div>
             </div>
             <div className="review-button-container">
-              <button className="review-button"><Link to={`/spots/${spot.id}/reviews`} className="review-button-link">Leave a review</Link></button>
+              <Link to={`/spots/${spot.id}/reviews`} className="review-button-link"><button className="review-button">Leave a review</button></Link>
               <ReviewIndex reviews={reviews} session={this.props.session} deleteReview={this.props.deleteReview} />
             </div>
           </div>

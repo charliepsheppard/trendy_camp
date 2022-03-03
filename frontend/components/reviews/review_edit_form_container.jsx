@@ -5,7 +5,8 @@ import ReviewEditForm from './review_edit_form';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    review: state.entities.reviews[ownProps.match.params.id]
+    review: state.entities.reviews[ownProps.match.params.id],
+    errors: state.errors.review
   }
 }
 
