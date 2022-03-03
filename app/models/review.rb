@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
-  validates :title, :body, :recommended, :user_id, :spot_id, presence: true
+  validates :title, :body, :user_id, :spot_id, presence: true
 
   belongs_to :spot,
     class_name: :Spot

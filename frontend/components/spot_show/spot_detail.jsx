@@ -87,7 +87,6 @@ class SpotDetail extends React.Component {
                       type="date"
                       className="date-input"
                       placeholder="Select date"
-                      value=""
                       min="2022-02-01"
                       max="2023-02-01"
                     />
@@ -99,7 +98,6 @@ class SpotDetail extends React.Component {
                       type="date"
                       className="date-input"
                       placeholder="Select date"
-                      value=""
                       min="2022-02-01"
                       max="2023-02-01"
                     />

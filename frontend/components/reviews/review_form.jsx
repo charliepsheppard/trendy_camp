@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaThumbsUp } from 'react-icons/fa';
+import { FaThumbsDown } from 'react-icons/fa';
 
 class ReviewForm extends React.Component {
   constructor(props) {
@@ -11,6 +13,7 @@ class ReviewForm extends React.Component {
       errors: []
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleChange(type) {
@@ -19,12 +22,23 @@ class ReviewForm extends React.Component {
     };
   }
 
+  handleClick(e) {
+    e.preventDefault();
+    $('.selected-option').removeClass("selected-option");
+    $(e.currentTarget).addClass("selected-option");
+    this.setState({ recommended: e.currentTarget.value })
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const spotId = parseInt(this.props.match.params.spotId);
-    const review = Object.assign({}, this.state, { spot_id: spotId })
-    console.log('review in review form: ', review);
-    this.props.createReview(review)
+    const review =  {
+      title: this.state.title,
+      body: this.state.body,
+      recommended: this.state.recommended
+    }
+    const reviewToSubmit = Object.assign({}, review, { spot_id: spotId })
+    this.props.createReview(reviewToSubmit)
       .then(() => this.props.history.push(`/spots/${this.props.match.params.spotId}`))
       .fail(() => this.setState({ errors: this.props.errors }))
   }
@@ -62,18 +76,21 @@ class ReviewForm extends React.Component {
             className="body-input"
           />
           <div className="recommended-container">
-            <label>Recommend
-            <input
-                type="radio"
-                value="true"
-              />
-            </label>
-            <label>Not recommend
-            <input
-                type="radio"
-                value="false"
-              />
-            </label>
+            <p>Would you recommend this site?</p>
+              <div className="recommend-buttons-container">
+                <button
+                  type="button"
+                  className="recommend-btn selected-option"
+                  value={true}
+                  onClick={this.handleClick}
+                ><FaThumbsUp /></button>
+                <button
+                  type="button"
+                  value={false}
+                  className="recommend-btn"
+                  onClick={this.handleClick}
+                ><FaThumbsDown /></button>
+              </div>
           </div>
           <button className="review-submit">Leave review</button>
           <button className="review-done-button"><Link to={`/spots/${this.props.match.params.spotId}`} className="review-done-link">X</Link></button>
