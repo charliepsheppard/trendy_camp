@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaThumbsUp } from 'react-icons/fa';
+import { FaThumbsDown } from 'react-icons/fa';
 
 class ReviewEditForm extends React.Component {
   constructor(props) {
@@ -34,7 +36,11 @@ class ReviewEditForm extends React.Component {
   }
 
   addClassToRecommendOnLoad() {
-    if (this.state.recommended === false) return $('#not-recommend').addClass('selected-option'); 
+    if (this.state.recommended === false) {
+      $('#not-recommend').addClass('selected-option'); 
+    } else {
+      $('#recommend').addClass('selected-option'); 
+    }
   }
 
   handleSubmit(e) {
@@ -59,7 +65,6 @@ class ReviewEditForm extends React.Component {
   }
 
   render() {
-    console.log('review edit form: ', this.state.recommended);
     return (
       <div>
         <form onSubmit={this.handleSubmit} className="review-form-container">
@@ -80,24 +85,23 @@ class ReviewEditForm extends React.Component {
             className="body-input"
           />
           <div className="recommended-container">
-            <label>Recommend
+            <p>Would you recommend this site?</p>
+            <div>
               <button
                 id='recommend'
                 type="button"
                 className="recommend-btn"
                 value={true}
                 onClick={this.handleClick}
-              >Yes</button>
-            </label>
-            <label>Not Recommend
+              ><FaThumbsUp /></button>
               <button
                 id="not-recommend"
                 type="button"
                 value={false}
                 className="recommend-btn"
                 onClick={this.handleClick}
-              >No</button>
-            </label>
+              ><FaThumbsDown /></button>
+            </div>
           </div>
           <button className="review-submit">Edit review</button>
           <button className="review-done-button"><Link to={`/spots/${this.props.match.params.spotId}`} className="review-done-link">X</Link></button>

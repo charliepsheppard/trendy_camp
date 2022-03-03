@@ -26,7 +26,7 @@ class ReviewIndexItem extends React.Component {
         </p>
         <p className="review-body">{this.props.review.body}</p>
         <div className="edit-delete-buttons">
-          <button className="review-button"><Link to={`/spots/${this.props.review.spotId}/reviews/${this.props.review.id}`} className="edit-button-link" >Edit review</Link></button>
+          <Link to={`/spots/${this.props.review.spotId}/reviews/${this.props.review.id}`} className="edit-button-link" ><button className="review-button">Edit review</button></Link>
           <button className="review-button" onClick={this.handleDelete}>Delete review</button>
         </div>
       </div>
