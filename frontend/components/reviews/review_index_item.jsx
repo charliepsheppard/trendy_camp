@@ -20,8 +20,7 @@ class ReviewIndexItem extends React.Component {
         <h3 className="review-content-heading">{this.props.review.title}</h3>
         <p className="review-recommended">
           <strong className="review-user-name">
-            {this.props.review.user.first_name} 
-            {this.props.review.user.last_name[0]}
+            {this.props.review.user.first_name} {this.props.review.user.last_name[0]}
             </strong>. {this.props.review.recommended ? 'recommends this listing.' : 'does not recommend this listing.' }
         </p>
         <p className="review-body">{this.props.review.body}</p>
