@@ -41,15 +41,13 @@ class BookingIndexItem extends React.Component {
       return (
         <div className="booking-index-item-container">
           <img src={spot.photoUrl} alt="spot-photo" className="booking-index-item-img" />
-          <div className="booking-index-item-info">
-            <h2 className="booking-index-item-name">{spot.name}</h2>
-            <p className="booking-index-item-price">${this.props.trip.total_price} total</p>
-          </div>
+          <h2 className="booking-index-item-name">{spot.name}</h2>
           <div className="booking-index-item-details">
+            <p className="booking-index-item-price">${this.props.trip.total_price} total</p>
             <span className="booking-index-item-guests">{this.props.trip.num_guests} guest(s) </span>
             <span className="booking-index-item-dates">{this.formatDate(startDate)} - {this.formatDate(endDate)}</span>
-            <button className="booking-index-item-delete" onClick={this.handleDelete}>Delete</button>
           </div>
+          <button className="booking-index-item-delete" onClick={this.handleDelete}>Delete</button>
         </div>
       )
     }
