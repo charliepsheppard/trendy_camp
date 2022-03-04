@@ -63,7 +63,7 @@ class BookingForm extends React.Component {
             </div>
             <div className="guest-number-container">
               <label className="booking-label">Guests
-                <select name="guests" className="guests-select">
+                <select name="guests" className="guests-select" onChange={this.handleChange('guests')}>
                   <option value="1">1 guest</option>
                   <option value="2">2 guests</option>
                   <option value="3">3 guests</option>
@@ -71,14 +71,14 @@ class BookingForm extends React.Component {
                 </select>
               </label>
             </div>
-            <div className="subtotal-container">
+            {/* <div className="subtotal-container"> */}
               {/* <label className="booking-label">Subtotal
                     <span>${spot.price}</span>
                   </label> */}
-              <span className="booking-label">Subtotal</span>
+              {/* <span className="booking-label">Subtotal</span>
               <span>${spot.price}</span>
-            </div>
-            <button className="booking-request-button">Book</button>
+            </div> */}
+            <button className="booking-request-button" type="submit">Book</button>
           </form>
         </div>
       </div>
