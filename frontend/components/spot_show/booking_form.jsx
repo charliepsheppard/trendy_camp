@@ -4,10 +4,10 @@ import { withRouter } from 'react-router-dom';
 class BookingForm extends React.Component {
   constructor(props) {
     super(props);
-
+    const today = new Date();
     this.state = {
-      start_date: '',
-      end_date: '',
+      start_date: new Date(today.getFullYear(), today.getMonth(), today.getDate()),
+      end_date: new Date(today.getFullYear(), today.getMonth(), today.getDate() + 3),
       guests: 1,
       spot: this.props.spot
     }
@@ -37,11 +37,11 @@ class BookingForm extends React.Component {
       num_guests: this.state.guests,
       total_price: ((this.state.guests) * dayDifference)
     }
-    const bookingToCreate = Object.assign({}, booking, { spot_id: spotId });
+    const bookingToCreate = Object.assign({}, booking);
 
     if (this.props.session) {
       this.props.createBooking(bookingToCreate)
-        .then(() => this.props.history.push(`/users/${this.props.session}/bookings`));
+        .then(() => this.props.history.push(`/users/${this.props.session}/bookings`)).then(() => location.reload());
     } else {
       this.props.history.push('/login');
     }
