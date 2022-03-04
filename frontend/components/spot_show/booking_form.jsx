@@ -13,15 +13,34 @@ class BookingForm extends React.Component {
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.getDayFromDate = this.getDayFromDate.bind(this);
+  }
+
+  getDayFromDate(date) {
+    let splitDate = date.split('-')
+    if (splitDate[2][0] === '0') {
+      return parseInt(splitDate[2][1])
+    } else {
+      return parseInt(splitDate[2])
+    }
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const spotId = parseInt(this.props.match.params.spotId);
-    const booking = Object.assign({}, this.state, { spot_id: spotId });
+    const dayDifference = this.getDayFromDate(this.state.end_date) - this.getDayFromDate(this.state.start_date);
+    const booking = {
+      spot_id: this.props.spot.id,
+      user_id: this.props.session,
+      start_date: this.state.start_date,
+      end_date: this.state.end_date,
+      num_guests: this.state.guests,
+      total_price: ((this.state.guests) * dayDifference)
+    }
+    const bookingToCreate = Object.assign({}, booking, { spot_id: spotId });
 
     if (this.props.session) {
-      this.props.createBooking(booking)
+      this.props.createBooking(bookingToCreate)
         .then(() => this.props.history.push(`/users/${this.props.session}/bookings`));
     } else {
       this.props.history.push('/login');

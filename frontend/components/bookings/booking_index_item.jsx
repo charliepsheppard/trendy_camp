@@ -33,10 +33,11 @@ class BookingIndexItem extends React.Component {
     const spot = this.props.trip.spot
     const startDate = this.props.trip.start_date;
     const endDate = this.props.trip.end_date
+    console.log('booking index item: ', this.props.trip)
 
     return (
       <div className="booking-index-item-container">
-        <img src={spot.photoUrl} alt="spot-photo" className="booking-index-item-img" />
+        {/* <img src={spot.photoUrl} alt="spot-photo" className="booking-index-item-img" /> */}
         <div className="booking-index-item-info">
           <h2 className="booking-index-item-name">{spot.name}</h2>
           <p className="booking-index-item-price">{spot.price}/night</p>
