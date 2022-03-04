@@ -31,25 +31,28 @@ class BookingIndexItem extends React.Component {
 
   render() {
 
-    // const spot = this.props.trip.spot
+    const spot = this.props.spots[this.props.trip.spot_id]
     const startDate = this.props.trip.start_date;
     const endDate = this.props.trip.end_date
-    console.log('booking index item: ', this.props.trip)
 
-    return (
-      <div className="booking-index-item-container">
-        {/* <img src={spot.photoUrl} alt="spot-photo" className="booking-index-item-img" /> */}
-        <div className="booking-index-item-info">
-          {/* <h2 className="booking-index-item-name">{spot.name}</h2> */}
-          <p className="booking-index-item-price">{this.props.trip.total_price}/night</p>
+    if (!spot) {
+      return null;
+    } else {
+      return (
+        <div className="booking-index-item-container">
+          <img src={spot.photoUrl} alt="spot-photo" className="booking-index-item-img" />
+          <div className="booking-index-item-info">
+            <h2 className="booking-index-item-name">{spot.name}</h2>
+            <p className="booking-index-item-price">${this.props.trip.total_price} total</p>
+          </div>
+          <div className="booking-index-item-details">
+            <span className="booking-index-item-guests">{this.props.trip.num_guests} guest(s) </span>
+            <span className="booking-index-item-dates">{this.formatDate(startDate)} - {this.formatDate(endDate)}</span>
+            <button className="booking-index-item-delete" onClick={this.handleDelete}>Delete</button>
+          </div>
         </div>
-        <div className="booking-index-item-details">
-          <span className="booking-index-item-guests">{this.props.trip.num_guests} guest(s) </span>
-          <span className="booking-index-item-dates">{this.formatDate(startDate)} - {this.formatDate(endDate)}</span>
-          <button className="booking-index-item-delete" onClick={this.handleDelete}>Delete</button>
-        </div>
-      </div>
-    )
+      )
+    }
   };
 };
 

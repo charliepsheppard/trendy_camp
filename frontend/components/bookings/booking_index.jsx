@@ -2,8 +2,17 @@ import React from 'react';
 import BookingIndexItem from './booking_index_item';
 
 class BookingIndex extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
+  
+  componentDidMount() {
+    this.props.fetchBookings(this.props.user.id);
+    this.props.fetchSpots()
+  }
+
   render() {
-    console.log('booking index', this.props.user)
 
     if (this.props.session !== this.props.user.id) {
       this.props.history.push('/');
@@ -16,6 +25,8 @@ class BookingIndex extends React.Component {
         deleteBooking={this.props.deleteBooking}
         history={this.props.history}
         fetchSpot={this.props.fetchSpot}
+        fetchSpots={this.props.fetchSpots}
+        spots={this.props.spots}
       />
     })
 

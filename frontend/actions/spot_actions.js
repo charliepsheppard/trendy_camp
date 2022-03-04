@@ -22,7 +22,7 @@ export const fetchSpots = () => dispatch => {
     .then(spots => dispatch(receiveAllSpots(spots)));
 };
 
-export const fetchSpot = spotId => dispatch => {
+export const fetchSpot = (spotId) => dispatch => {
   return SpotAPIUtil.fetchSpot(spotId)
     .then(spot => dispatch(receiveSpot(spot)));
 };

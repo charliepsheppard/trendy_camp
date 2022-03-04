@@ -19,8 +19,10 @@ class BookingForm extends React.Component {
   getDayFromDate(date) {
     let splitDate = date.split('-')
     if (splitDate[2][0] === '0') {
+      console.log(parseInt(splitDate[2][1]))
       return parseInt(splitDate[2][1])
     } else {
+      console.log(parseInt(splitDate[2]))
       return parseInt(splitDate[2])
     }
   }
@@ -29,19 +31,21 @@ class BookingForm extends React.Component {
     e.preventDefault();
     const spotId = parseInt(this.props.match.params.spotId);
     const dayDifference = this.getDayFromDate(this.state.end_date) - this.getDayFromDate(this.state.start_date);
+    console.log('day difference', dayDifference)
     const booking = {
       spot_id: this.props.spot.id,
       user_id: this.props.session,
       start_date: this.state.start_date,
       end_date: this.state.end_date,
       num_guests: this.state.guests,
-      total_price: ((this.state.guests) * dayDifference)
+      total_price: (this.state.guests * this.props.spot.price) * dayDifference
     }
     const bookingToCreate = Object.assign({}, booking);
 
     if (this.props.session) {
       this.props.createBooking(bookingToCreate)
-        .then(() => this.props.history.push(`/users/${this.props.session}/bookings`)).then(() => location.reload());
+        .then(() => this.props.history.push(`/users/${this.props.session}/bookings`))
+        .then(() => location.reload());
     } else {
       this.props.history.push('/login');
     }
@@ -66,6 +70,7 @@ class BookingForm extends React.Component {
                   <input
                     type="date"
                     className="date-input"
+                    value={this.state.start_date}
                     onChange={this.handleChange('start_date')}
                   />
                 </label>
@@ -75,6 +80,7 @@ class BookingForm extends React.Component {
                     <input
                       type="date"
                       className="date-input"
+                      value={this.state.end_date}
                       onChange={this.handleChange('end_date')}
                   />
                 </label>
