@@ -125,7 +125,7 @@ class SpotDetail extends React.Component {
               <button className="booking-request-button">Book</button>
             </div>
           </div> */}
-          <BookingFormContainer spot={this.props.spot} />
+          <BookingFormContainer spot={this.props.spot} session={this.props.session} />
         </div>
       </div>
     )

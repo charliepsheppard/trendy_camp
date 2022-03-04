@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class BookingForm extends React.Component {
   constructor(props) {
@@ -10,36 +11,52 @@ class BookingForm extends React.Component {
       guests: 1,
       spot: this.props.spot
     }
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const spotId = parseInt(this.props.match.params.spotId);
+    const booking = Object.assign({}, this.state, { spot_id: spotId });
+
+    if (this.props.session) {
+      this.props.createBooking(booking)
+        .then(() => this.props.history.push(`/users/${this.props.session}/bookings`));
+    } else {
+      this.props.history.push('/login');
+    }
+  }
+
+  handleChange(field) {
+    return e => this.setState({ [field]: e.currentTarget.value })
   }
 
   render() {
+    // console.log('booking form', this.props.session);
     const { spot } = this.props;
     return (
       <div className="booking-box">
         <h3 className="booking-box-info booking-box-heading">${spot.price}</h3>
         <p className="booking-box-info">Average per night (2 guests)</p>
         <div className="booking-box-details">
-          <form>
+          <form className="booking-form" onSubmit={this.handleSubmit}>
             <div className="date-selector">
               <div className="date-input-wrapper">
                 <label className="booking-label">Check in
-                      <input
+                  <input
                     type="date"
                     className="date-input"
-                    placeholder="Select date"
-                    min="2022-02-01"
-                    max="2023-02-01"
+                    onChange={this.handleChange('start_date')}
                   />
                 </label>
               </div>
               <div className="date-input-wrapper">
                 <label className="booking-label">Check out
-                      <input
-                    type="date"
-                    className="date-input"
-                    placeholder="Select date"
-                    min="2022-02-01"
-                    max="2023-02-01"
+                    <input
+                      type="date"
+                      className="date-input"
+                      onChange={this.handleChange('end_date')}
                   />
                 </label>
               </div>
@@ -69,4 +86,4 @@ class BookingForm extends React.Component {
   };
 };
 
-export default BookingForm;
+export default withRouter(BookingForm);
