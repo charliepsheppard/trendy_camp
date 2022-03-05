@@ -3,6 +3,7 @@ $button: #41d9ac;
 
 .footer-container {
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
   margin-top: 1em;
   padding: 1em;
@@ -12,7 +13,7 @@ $button: #41d9ac;
   width: 100%;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: $primary-text;
+  // background-color: $primary-text;
 }
 
 .footer-social-links {
