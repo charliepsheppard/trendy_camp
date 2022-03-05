@@ -8,7 +8,9 @@ import SpotsIndexContainer from './spots/spots_index_container';
 import SpotShowContainer from './spot_show/spot_show_container';
 import ReviewFormContainer from './reviews/review_form_container';
 import ReviewEditFormContainer from './reviews/review_edit_form_container';
+import BookingIndexContainer from './bookings/booking_index_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import Footer from './footer/footer';
 
 const App = () => {
   return (
@@ -22,11 +24,13 @@ const App = () => {
         <AuthRoute exact path="/signup" component={SignUpFormContainer} />
         <ProtectedRoute exact path="/spots/:spotId/reviews" component={ReviewFormContainer} />
         <ProtectedRoute exact path="/spots/:spotId/reviews/:id" component={ReviewEditFormContainer} />
+        <ProtectedRoute exact path="/users/:userId/bookings" component={BookingIndexContainer} />
         <Route exact path="/" component={SpotsIndexContainer} />
         <Route path="/spots/:spotId" component={SpotShowContainer} />
         {/* <Route exact path="/login" component={LogInFormContainer} />
         <Route exact path="/signup" component={SignUpFormContainer} /> */}
       </Switch>
+      <Footer />
     </div>
   )
 }

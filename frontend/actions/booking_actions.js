@@ -31,6 +31,7 @@ export const fetchBookings = userId => dispatch => {
 };
 
 export const createBooking = booking => dispatch => {
+  debugger;
   return BookingApiUtil.createBooking(booking)
     .then(booking => dispatch(receiveBooking(booking)));
 };

@@ -86,7 +86,7 @@ $primary-text: #333333;
 
 .booking-box {
   width: 380px;
-  height: 24rem;
+  height: 20rem;
   // align-self: auto;
   margin-left: 150px;
   margin-right: 150px;
@@ -164,6 +164,7 @@ $primary-text: #333333;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
+  width: 92%;
 }
 
 .booking-request-button:hover {

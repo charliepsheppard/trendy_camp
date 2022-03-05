@@ -1,6 +1,7 @@
 import React from 'react';
 import ReviewIndex from '../reviews/review_index';
 import { Link } from 'react-router-dom';
+import BookingFormContainer from './booking_form_container';
 
 class SpotDetail extends React.Component {
   
@@ -76,7 +77,7 @@ class SpotDetail extends React.Component {
               <ReviewIndex reviews={reviews} session={this.props.session} deleteReview={this.props.deleteReview} />
             </div>
           </div>
-          <div className="booking-box">
+          {/* <div className="booking-box">
             <h3 className="booking-box-info booking-box-heading">${spot.price}</h3>
             <p className="booking-box-info">Average per night (2 guests)</p>
             <div className="booking-box-details">
@@ -114,16 +115,17 @@ class SpotDetail extends React.Component {
                   </select>
                 </label>
               </div>
-              <div className="subtotal-container">
+              <div className="subtotal-container"> */}
                 {/* <label className="booking-label">Subtotal
                   <span>${spot.price}</span>
                 </label> */}
-                <span className="booking-label">Subtotal</span>
+                {/* <span className="booking-label">Subtotal</span>
                 <span>${spot.price}</span>
               </div>
               <button className="booking-request-button">Book</button>
             </div>
-          </div>
+          </div> */}
+          <BookingFormContainer spot={this.props.spot} session={this.props.session} />
         </div>
       </div>
     )
