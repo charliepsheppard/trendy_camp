@@ -1,0 +1,25 @@
+$primary-text: #333333;
+$button: #41d9ac;
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
+  padding: 1em;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: $primary-text;
+}
+
+.footer-social-links {
+  padding-right: 2em;
+}
+
+.footer-social-link {
+  margin: 0 1em;
+  color: $button;
+} 

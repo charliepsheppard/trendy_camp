@@ -10,6 +10,7 @@ import ReviewFormContainer from './reviews/review_form_container';
 import ReviewEditFormContainer from './reviews/review_edit_form_container';
 import BookingIndexContainer from './bookings/booking_index_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import Footer from './footer/footer';
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
         {/* <Route exact path="/login" component={LogInFormContainer} />
         <Route exact path="/signup" component={SignUpFormContainer} /> */}
       </Switch>
+      <Footer />
     </div>
   )
 }
