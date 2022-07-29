@@ -28,6 +28,7 @@ class ReviewIndexItem extends React.Component {
   }
 
   render() {
+    console.log('review index item: ')
     return (
       <div className="review-content-container">
         <h3 className="review-content-heading">{this.props.review.title}</h3>
