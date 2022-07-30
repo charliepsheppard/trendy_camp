@@ -10,6 +10,7 @@ class SpotDetail extends React.Component {
     console.log(this.props);
     const { spot } = this.props;
     const reviews = this.props.reviews ? Object.values(this.props.reviews) : [];
+    console.log('reviews from spot detail: ', reviews)
     return (
       <div className="spot-detail-container">
           <div className="spot-detail-info-container">
