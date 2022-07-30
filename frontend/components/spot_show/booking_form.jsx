@@ -17,6 +17,8 @@ class BookingForm extends React.Component {
   }
 
   getDayFromDate(date) {
+    console.log('booking form date: ', date);
+    if (!date) return false;
     let splitDate = date.split('-')
     if (splitDate[2][0] === '0') {
       console.log(parseInt(splitDate[2][1]))
@@ -48,7 +50,7 @@ class BookingForm extends React.Component {
           .then(() => this.props.history.push(`/users/${this.props.session}/bookings`))
           .then(() => location.reload());
       } else {
-        alert("End date must be at least one day after start date");
+        alert("End date must be at least one day after start date.");
       }
     } else {
       this.props.history.push('/login');
