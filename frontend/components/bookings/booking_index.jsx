@@ -29,7 +29,6 @@ class BookingIndex extends React.Component {
         spots={this.props.spots}
       />
     })
-    console.log('heroku working?');
     return (
       <div className="trips-list-container">
         <h1 className="trips-list-heading">{this.props.user.firstName}'s Trip(s)</h1>
