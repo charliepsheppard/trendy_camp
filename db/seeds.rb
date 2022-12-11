@@ -196,7 +196,7 @@ spot20.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/hobbi
 review1 = Review.create({
   title: 'Great stay in a beautiful yurt',
   body: 'We had a wonderful stay at The Castle House. It was beautiful and the stars were amazing. Pretty much every night we would sit in the pool and look up at the stars. I would absolutely recommend this to a friend.',
-  rating: 5,
+  recommended: true,
   user_id: demoUser.id,
   spot_id: spot9.id
 })
