@@ -6,11 +6,8 @@ import BookingFormContainer from './booking_form_container';
 class SpotDetail extends React.Component {
   
   render() {
-    console.log('in spotdetail: ', this.props.reviews)
-    console.log(this.props);
     const { spot } = this.props;
     const reviews = this.props.reviews ? Object.values(this.props.reviews) : [];
-    console.log('reviews from spot detail: ', reviews)
     return (
       <div className="spot-detail-container">
           <div className="spot-detail-info-container">
