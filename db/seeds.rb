@@ -20,7 +20,7 @@ spot1 = Spot.create({
   category: 'Tent',
   price: 55
 })
-spot1.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/fern-gully.jpg'), filename: 'fern-gully.jpg') 
+#spot1.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/fern-gully.jpg'), filename: 'fern-gully.jpg') 
 
 spot2 = Spot.create({
   name: 'Blueberry Hill Oasis and Old Growth',
@@ -29,7 +29,7 @@ spot2 = Spot.create({
   category: 'Vacation rental',
   price: 200
 })
-spot2.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/blueberry-hill.jpg'), filename: 'blueberry-hill.jpg')
+#spot2.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/blueberry-hill.jpg'), filename: 'blueberry-hill.jpg')
 
 spot3 = Spot.create({
   name: 'North Fork Campground',
@@ -38,7 +38,7 @@ spot3 = Spot.create({
   category: 'Tent',
   price: 30
 })
-spot3.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/north-fork.jpg'), filename: 'north-fork.jpg')
+#spot3.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/north-fork.jpg'), filename: 'north-fork.jpg')
 
 spot4 = Spot.create({
   name: 'Hoh Cabin',
@@ -47,7 +47,7 @@ spot4 = Spot.create({
   category: 'Cabin',
   price: 35
 })
-spot4.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/hoh-cabin.jpg'), filename: 'hoh-cabin.jpg')
+#spot4.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/hoh-cabin.jpg'), filename: 'hoh-cabin.jpg')
 
 spot5 = Spot.create({
   name: 'S K Y C A M P',
@@ -56,7 +56,7 @@ spot5 = Spot.create({
   category: 'Tent' ,
   price: 65
 })
-spot5.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/skycamp.jpg'), filename: 'skycamp.jpg')
+#spot5.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/skycamp.jpg'), filename: 'skycamp.jpg')
 
 spot6 = Spot.create({
   name: 'The Magic Hour Home',
@@ -65,7 +65,7 @@ spot6 = Spot.create({
   category: 'Vacation rental',
   price: 600
 })
-spot6.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/magic-hour.jpg'), filename: 'magic-hour.jpg')
+#spot6.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/magic-hour.jpg'), filename: 'magic-hour.jpg')
 
 spot7 = Spot.create({
   name: 'The Saharan',
@@ -74,7 +74,7 @@ spot7 = Spot.create({
   category: 'Canvas tent',
   price: 99
 })
-spot7.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/saharan.jpg'), filename: 'saharan.jpg')
+#spot7.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/saharan.jpg'), filename: 'saharan.jpg')
 
 spot8 = Spot.create({
   name: 'The Watering Hole',
@@ -83,7 +83,7 @@ spot8 = Spot.create({
   category: 'Tent',
   price: 48
 })
-spot8.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/watering-hole.jpg'), filename: 'watering-hole.jpg')
+#spot8.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/watering-hole.jpg'), filename: 'watering-hole.jpg')
 
 spot9 = Spot.create({
   name: 'The Castle House | Yurt 1 with Pool',
@@ -92,7 +92,7 @@ spot9 = Spot.create({
   category: 'Yurt',
   price: 222
 })
-spot9.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/castle-house.jpg'), filename: 'castle-house.jpg')
+#spot9.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/castle-house.jpg'), filename: 'castle-house.jpg')
 
 spot10 = Spot.create({
   name: 'Yellowstone Dreamin Camp',
@@ -101,7 +101,7 @@ spot10 = Spot.create({
   category: 'Tent',
   price: 263
 })
-spot10.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/yellowstone-dreamin.jpg'), filename: 'yellowstone-dreamin.jpg')
+#spot10.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/yellowstone-dreamin.jpg'), filename: 'yellowstone-dreamin.jpg')
 
 spot11 = Spot.create({
   name: "Sportsman's Retreat RV Sites",
@@ -110,7 +110,7 @@ spot11 = Spot.create({
   category: 'RV',
   price: 85
 })
-spot11.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/sportsman-retreat.jpg'), filename: 'sportsman-retreat.jpg')
+#spot11.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/sportsman-retreat.jpg'), filename: 'sportsman-retreat.jpg')
 
 spot12 = Spot.create({
   name: 'Cabin on Arcadia Reservoir',
@@ -119,7 +119,7 @@ spot12 = Spot.create({
   category: 'Cabin',
   price: 160
 })
-spot12.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/arcadia-cabin.jpg'), filename: 'arcadia-cabin.jpg')
+#spot12.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/arcadia-cabin.jpg'), filename: 'arcadia-cabin.jpg')
 
 spot13 = Spot.create({
   name: 'Desert Moon RV Camping',
@@ -128,7 +128,7 @@ spot13 = Spot.create({
   category: 'RV',
   price: 25
 })
-spot13.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/desert-moon.jpg'), filename: 'desert-moon.jpg')
+#spot13.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/desert-moon.jpg'), filename: 'desert-moon.jpg')
 
 spot14 = Spot.create({
   name: 'Sky Dancers Den',
@@ -137,7 +137,7 @@ spot14 = Spot.create({
   category: 'Canvas tent',
   price: 95
 })
-spot14.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/sky-dancers.jpg'), filename: 'sky-dancers.jpg')
+#spot14.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/sky-dancers.jpg'), filename: 'sky-dancers.jpg')
 
 spot15 = Spot.create({
   name: 'North Campground',
@@ -146,7 +146,7 @@ spot15 = Spot.create({
   category: 'Tent',
   price: 20
 })
-spot15.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/north-campground.jpg'), filename: 'north-campground.jpg')
+#spot15.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/north-campground.jpg'), filename: 'north-campground.jpg')
 
 spot16 = Spot.create({
   name: 'Zion Backcountry Sheep Camps',
@@ -155,7 +155,7 @@ spot16 = Spot.create({
   category: 'Cabin',
   price: 105
 })
-spot16.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/sheep-camp.jpg'), filename: 'sheep-camp.jpg')
+#spot16.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/sheep-camp.jpg'), filename: 'sheep-camp.jpg')
 
 spot17 = Spot.create({
   name: 'Apple Hollow Tiny House',
@@ -164,7 +164,7 @@ spot17 = Spot.create({
   category: 'Cabin',
   price: 215
 })
-spot17.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/apple-hollow.jpg'), filename: 'apple-hollow.jpg')
+#spot17.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/apple-hollow.jpg'), filename: 'apple-hollow.jpg')
 
 spot18 = Spot.create({
   name: 'Yurt Glamping, stargazing',
@@ -173,7 +173,7 @@ spot18 = Spot.create({
   category: 'Yurt',
   price: 130
 })
-spot18.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/yurt-stargazing.jpg'), filename: 'yurt-stargazing.jpg')
+#spot18.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/yurt-stargazing.jpg'), filename: 'yurt-stargazing.jpg')
 
 spot19 = Spot.create({
   name: 'Zen House',
@@ -182,7 +182,7 @@ spot19 = Spot.create({
   category: 'Cabin',
   price: 135
 })
-spot19.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/zen-house.jpg'), filename: 'zen-house.jpg')
+#spot19.photo.attach(io: open('https://ik.imagekit.io/4hr81t1ot/trendy-camp/zen-house.jpg'), filename: 'zen-house.jpg')
 
 spot20 = Spot.create({
   name: 'Cozy Hobbit House on Bainbridge',
