@@ -1,6 +1,20 @@
 import React from 'react';
 import spot_show_container from '../spot_show/spot_show_container';
 
+// const BookingIndexItem = (props) => {
+//   const handleDelete = (e) => {
+//     e.preventDefault();
+//     props.deleteBooking(props.trip.id)
+//       .then(() => location.reload());
+//   }
+
+//   const formatDate = (date) => {
+//     const formattedDate = new Intl.DateTimeFormat('en-US', {
+//       dateStyle: 'full'
+//     });
+//     return formattedDate.format(date);
+//   }
+// }
 class BookingIndexItem extends React.Component {
   constructor(props) {
     super(props);
@@ -27,6 +41,11 @@ class BookingIndexItem extends React.Component {
     const dayOfWeek = days[new Date(year, parseInt(splitDate[1]) - 1, dateNum).getDay()];
 
     return `${dayOfWeek}, ${dateNum} ${month}, ${year}`
+
+    // const formattedDate = new Intl.DateTimeFormat('en-US', {
+    //   dateStyle: 'full'
+    // });
+    // return formattedDate.format(date);
   }
 
   render() {
